@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 10px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a1a1a1;
+  border-radius: 5px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* To add white background for the image in resurfacing section */
+.img_pc9x2k-o_O-imgLoaded_9vayoh,
+.thumbnail_m3dhvq-o_O-thumbnail__active_17lk080,
+.thumbnail_m3dhvq {
+  background-color: white;
+}
+
+.thumbnail_m3dhvq-o_O-thumbnail__active_17lk080 {
+  border: 1px solid #ed9421;
+}
+
+/* To add white background for the image in resurfacing section for build */
+._1e2hvg2r,
+._m3dhvq,
+._xb14mdj {
+  background-color: white;
+}
+._xb14mdj {
+  border: 1px solid #ed9421;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

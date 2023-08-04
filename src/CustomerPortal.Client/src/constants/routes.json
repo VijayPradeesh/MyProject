@@ -1,0 +1,14 @@
+{
+  "LOGIN": "/",
+  "SIGNUP": "/SignUp",
+  "RESET_PASSWORD": "/ResetPassword",
+  "USER_ACCESS": "/UserAccess",
+  "JOB_DASHBOARD": "/Dashboard",
+  "REPORTS": "/Reports",
+  "CONTRACT_MAPPING": "/ContractMapping",
+  "SCREEN_MAPPING": "/ScreenMapping",
+  "FORGOT_PASSWORD": "/ForgotPassword",
+  "PROFILE": "/Profile",
+  "RESURFACING_REPORTS": "/ResurfacingReports",
+  "TUTORIAL": "/HelpCenter"
+}
