@@ -1,0 +1,33 @@
+﻿<div>
+    <h4>C.Equipment</h4>
+    <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+        <thead>
+            <tr>
+                <th style="width:25%;">Equipment #</th>
+                <th style="width:46%;">Description</th>
+                <th style="width:9%;">Hours</th>
+                <th style="width:20%;">Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var equipmentrowcount = true;
+                foreach (var equipment in @Model.EquipmentActivity)
+                {
+                    <tr>
+                        <td>@equipment.EquipmentCode</td>
+                        <td>@equipment.EquipmentName</td>
+                        <td>@equipment.Hours</td>
+                        @if (equipmentrowcount)
+                        {
+                            equipmentrowcount = false;
+                            <td rowspan="@Model.EquipmentCount">
+                                @Model.EquipmentComments
+                            </td>
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

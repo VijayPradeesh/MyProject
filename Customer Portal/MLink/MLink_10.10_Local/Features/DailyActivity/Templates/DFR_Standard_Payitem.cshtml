@@ -1,0 +1,107 @@
+﻿<div>
+
+    @if (@Model.isSpireContract == true && @Model.ProdRevenueCount != 0)
+    {
+        <h4>A.Production Revenue</h4>
+    }
+    else if (@Model.isSpireContract == false)
+    {
+        <h4>A.Revenue</h4>
+
+    }
+    <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+        <thead>
+            <tr>
+                <th style="width:12%;">Pay Item #</th>
+                <th style="width:22%;">Description</th>
+                <th style="width:9%;">Qty</th>
+                <th style="width:9%;">UOM</th>
+                <th style="width:11%;">WO #</th>
+                <th style="width:11%;">PO #</th>
+                <th style="width:15%;">Location</th>
+                <th style="width:11%;">Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var revenuerowcount = true;
+                foreach (var revenue in @Model.RevenueItems)
+                {
+                    foreach (var revenuerecord in @revenue.Records)
+                    {
+                        <tr>
+                            <td>@revenue.PayItemCode</td>
+                            <td>@revenue.PayItemDescription</td>
+                            <td>@revenuerecord.Quantity</td>
+                            <td>@revenuerecord.UnitOfMeasure</td>
+                            <td>@revenuerecord.WorkOrderNumber</td>
+                            <td>@revenuerecord.PurchaseOrderNumber</td>
+                            <td>@revenuerecord.Address - @revenuerecord.City - @revenuerecord.State</td>
+                            @if (revenuerowcount)
+                            {
+                                revenuerowcount = false;
+                                <td rowspan="@Model.PayitemCount">
+                                    @Model.PayitemComments
+                                </td>
+                            }
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+
+    @if (@Model.isSpireContract)
+    {
+        if (@Model.ProdRevenueCount != 0 && @Model.TandMRevenueCount != 0)
+        {
+            <h4>T and M Revenue</h4>
+        }
+        else if(@Model.TandMRevenueCount != 0)
+        {
+            <h4>A.T and M Revenue</h4>
+        }
+        <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+            <thead>
+                <tr>
+                    <th style="width:12%;">Pay Item #</th>
+                    <th style="width:22%;">Description</th>
+                    <th style="width:9%;">Qty</th>
+                    <th style="width:9%;">UOM</th>
+                    <th style="width:11%;">WO #</th>
+                    <th style="width:11%;">PO #</th>
+                    <th style="width:15%;">Location</th>
+                    <th style="width:11%;">Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var revenuerowcount1 = true;
+                    foreach (var revenue in @Model.TAndMRevenueItems)
+                    {
+                        foreach (var revenuerecord in @revenue.Records)
+                        {
+                            <tr>
+                                <td>@revenue.PayItemCode</td>
+                                <td>@revenue.PayItemDescription</td>
+                                <td>@revenuerecord.Quantity</td>
+                                <td>@revenuerecord.UnitOfMeasure</td>
+                                <td>@revenuerecord.WorkOrderNumber</td>
+                                <td>@revenuerecord.PurchaseOrderNumber</td>
+                                <td>@revenuerecord.Address - @revenuerecord.City - @revenuerecord.State</td>
+                                @if (revenuerowcount1)
+                                {
+                                    revenuerowcount1 = false;
+                                    <td rowspan="@Model.PayitemCount">
+                                        @Model.PayitemComments
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    }
+
+</div>

@@ -1,0 +1,25 @@
+﻿<div>
+    <table class="firstDiv" style="width:100%; padding-top:30px; border:none;border-width:0px; repeat-header:yes;repeat-footer:yes;">
+        <tr>
+            <td id="td-1" style="border:none;border-width:0px; vertical-align:top;">
+                <h4>Approver/Reviewer Comments</h4>
+                <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+                    <thead>
+                        <tr>
+                            <th style="width:100%;">Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            <tr>
+                                <td>
+                                    @Model.ReviewerComments
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>

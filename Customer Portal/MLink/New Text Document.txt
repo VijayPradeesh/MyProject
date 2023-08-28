@@ -1,0 +1,19 @@
+Adding new employee directly into the array of phases.(Similarly in equipment screens as well).
+Deletion confirmation on deleting employee under each phase.
+Can equipment screen be empty(Literally no phases).
+
+Pending Items:
+Adding New Job number in the labor Screen
+Reviewer approver screen design
+dfr template design.
+
+select  EMPLOYEE_ID from [CrewLink.Prod.Latest].[dbo].[WI_EMPLOYEE_MASTER_T] where STATUS = 'A' group by employee_id having count(EMPLOYEE_ID) > 1 
+
+
+  select EMPLOYEE_ID, EMPLOYEE_NAME from WI_EMPLOYEE_MASTER_T where EMPLOYEE_ID
+  in (select EMPLOYEE_ID from WI_EMPLOYEE_MASTER_T where STATUS = 'A' group by employee_id having count(EMPLOYEE_ID) > 1) and EMPLOYEE_ID != '' and STATUS = 'A'
+
+Are you sure you want to {{status}} this dfr?
+
+<button class = "status">{{status}}</button>
+

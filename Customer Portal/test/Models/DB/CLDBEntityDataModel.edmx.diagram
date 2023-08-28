@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2fd1efcf92fd49d3a453cfbcb946634b" Name="Diagram1" ShowGrid="true" ZoomLevel="98">
+        <EntityTypeShape EntityType="CLDBModel.CL_COMMENT_T" Width="1.5" PointX="10.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CLDBModel.CL_DATA_AUDIT_LOG_T" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="CLDBModel.CL_JOB_HEADER_INFO_T" Width="1.5" PointX="5.25" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CLDBModel.CL_JOB_STATUS_T" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CLDBModel.CL_JOB_T" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
+        <AssociationConnector Association="CLDBModel.FK_CL_COMMENT_CL_JOB" ManuallyRouted="false" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_CL_JOB_STATUS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CLDBModel.WI_COMPANY_MASTER_T" Width="1.5" PointX="0.75" PointY="22.125" />
+        <AssociationConnector Association="CLDBModel.FK_CL_FOREMAN_GENERAL_INFO_WI_COMPANY_MASTER" />
+        <EntityTypeShape EntityType="CLDBModel.WI_PAYITEM_MASTER_T" Width="1.5" PointX="11.625" PointY="21.375" />
+        <EntityTypeShape EntityType="CLDBModel.WI_FLEET_MASTER_T" Width="1.5" PointX="16.375" PointY="10.125" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WI_FLEET_V" Width="1.5" PointX="16.375" PointY="15.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_JOB_STATUS_V" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CLDBModel.WI_CITYCODE_MASTER_T" Width="1.5" PointX="10.375" PointY="8.875" />
+        <EntityTypeShape EntityType="CLDBModel.GET_JOB_V" Width="1.5" PointX="3.375" PointY="5.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_LABOR_PAYITEM_V" Width="1.5" PointX="18.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CLDBModel.WI_EMPLOYEE_MASTER_T" Width="1.5" PointX="0.75" PointY="20.375" />
+        <EntityTypeShape EntityType="CLDBModel.GET_ASSIGNED_JOB_V" Width="1.5" PointX="18.375" PointY="9.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_CONTRACT_CREW_V" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_CONTRACT_FLEET_V" Width="1.5" PointX="18.375" PointY="14.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WI_COMPANY_V" Width="1.5" PointX="7.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WI_EMPLOYEE_MASTER_V" Width="1.5" PointX="7.375" PointY="20.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WI_CONTRACT_V" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WI_CUSTOMER_V" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WI_CREW_V" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WI_JOB_V" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_SUPERINTENDENT_V" Width="1.5" PointX="14.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_SUPERINTENDENT_JOBS_V" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.CL_CONTRACT_CREW_T" Width="1.5" PointX="10.875" PointY="28.25" />
+        <AssociationConnector Association="CLDBModel.FK_CL_CONTRACT_CREW_T_WI_EMPLOYEE_MASTER_T" />
+        <EntityTypeShape EntityType="CLDBModel.CL_WEEKEND_MILES_STATUS_T" Width="1.5" PointX="21.875" PointY="20.5" />
+        <AssociationConnector Association="CLDBModel.FK_CL_WEEKEND_MILES_STATUS_T_CL_WEEKEND_MILES_STATUS_T" />
+        <EntityTypeShape EntityType="CLDBModel.CL_ACL_T" Width="1.5" PointX="11.25" PointY="17.25" />
+        <EntityTypeShape EntityType="CLDBModel.CL_USER_ACCESS_TYPE_T" Width="1.5" PointX="9" PointY="33.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_ACL_V" Width="1.5" PointX="20.375" PointY="11.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_USERS_V" Width="1.5" PointX="20.375" PointY="15.75" />
+        <AssociationConnector Association="CLDBModel.FK_CL_ACL_T_CL_ACL_T" />
+        <AssociationConnector Association="CLDBModel.FK_CL_ACL_T_CL_USER_ACCESS_TYPE_T" />
+        <EntityTypeShape EntityType="CLDBModel.CL_USER_MODULES_T" Width="1.5" PointX="9" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.CL_USER_ROLES_T" Width="1.5" PointX="0.75" PointY="11.125" />
+        <AssociationConnector Association="CLDBModel.FK_CL_ACL_T_CL_USER_MODULES_T" />
+        <AssociationConnector Association="CLDBModel.FK_CL_ACL_T_CL_USER_ROLES_T" />
+        <AssociationConnector Association="CLDBModel.FK_CL_USER_MODULES_CL_USER_ROLES" />
+        <EntityTypeShape EntityType="CLDBModel.CL_CONFIGURATION_T" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="CLDBModel.CL_JOB_PAYITEM_T" Width="1.5" PointX="16.875" PointY="21.125" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_PAYITEM_CL_ASSIGNED_JOBS" />
+        <AssociationConnector Association="CLDBModel.FK_CR2_JOB_PAYITEM_WI_CITYCODE_MASTER1" />
+        <AssociationConnector Association="CLDBModel.FK_CR2_JOB_PAYITEM_WI_PAYITEMS1" />
+        <EntityTypeShape EntityType="CLDBModel.CL_LOCK_DOWN_T" Width="1.5" PointX="5.25" PointY="39.25" />
+        <EntityTypeShape EntityType="CLDBModel.CL_EXPORT_HISTORY_T" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_PAYITEMS_V" Width="1.5" PointX="22.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_WEEKEND_MILES_STATUS_V" Width="1.5" PointX="22.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CLDBModel.CL_DB_ERROR_LOG_T" Width="1.5" PointX="22.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CLDBModel.WI_DEPARTMENT_MASTER_T" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.WI_GL_MASTER_T" Width="1.5" PointX="22.375" PointY="14.75" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_HEADER_INFO_T_CL_JOB_HEADER_INFO_T" />
+        <EntityTypeShape EntityType="CLDBModel.WI_CONTRACT_MASTER_T" Width="1.5" PointX="3" PointY="12" />
+        <AssociationConnector Association="CLDBModel.FK_CL_CONTRACT_CREW_T_WI_CONTRACT_MASTER_T" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_HEADER_INFO_T_WI_CONTRACT_MASTER_T" />
+        <AssociationConnector Association="CLDBModel.FK_WI_CONTRACT_MASTER_WI_COMPANY_MASTER" />
+        <EntityTypeShape EntityType="CLDBModel.WI_CUSTOMER_MASTER_T" Width="1.5" PointX="3" PointY="34.125" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_PAYITEM_WI_CUSTOMER_MASTER" />
+        <AssociationConnector Association="CLDBModel.FK_WI_CUSTOMER_MASTER_WI_COMPANY_MASTER" />
+        <AssociationConnector Association="CLDBModel.FK_WI_CUSTOMER_MASTER_T_WI_CONTRACT_MASTER_T" />
+        <AssociationConnector Association="CLDBModel.FK_WI_CUSTOMER_MASTER_T_WI_CUSTOMER_MASTER_T" />
+        <EntityTypeShape EntityType="CLDBModel.GET_UNASSIGNED_JOB_V" Width="1.5" PointX="24.375" PointY="13.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_PAYITEM_UNIQUE_WBS_V" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_CL_JOB_V" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.CL_FAVORITE_PAYITEM_T" Width="1.5" PointX="14.25" PointY="25.375" />
+        <AssociationConnector Association="CLDBModel.FK_CL_FAVORITE_PAYITEM_T_WI_COMPANY_MASTER_T" />
+        <AssociationConnector Association="CLDBModel.FK_CL_FAVORITE_PAYITEM_T_WI_CONTRACT_MASTER_T" />
+        <EntityTypeShape EntityType="CLDBModel.CL_JOB_LABOR_T" Width="1.5" PointX="14.125" PointY="18.25" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_LABOR_CL_FOREMAN_CREW" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_LABOR_WI_CITYCODE_MASTER" />
+        <AssociationConnector Association="CLDBModel.FK_CR2_JOB_LABOUR_CR2_JOB" />
+        <EntityTypeShape EntityType="CLDBModel.GET_JOB_PAYITEM_V" Width="1.5" PointX="3.375" PointY="22.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_JOB_LABORS_V" Width="1.5" PointX="24.75" PointY="24.75" />
+        <EntityTypeShape EntityType="CLDBModel.GET_PAYITEM_EQUIPMENT_UNIQUE_WBS_V" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.CL_JOB_REVIEWER_T" Width="1.5" PointX="3" PointY="26.25" />
+        <EntityTypeShape EntityType="CLDBModel.CL_SUPERINTENDENT_REVIEWER_T" Width="1.5" PointX="3" PointY="29" />
+        <EntityTypeShape EntityType="CLDBModel.GET_REVIEWER_JOBS_V" Width="1.5" PointX="19.375" PointY="25.75" />
+        <AssociationConnector Association="CLDBModel.FK__CL_JOB_RE__REVIE__4B422AD5" />
+        <AssociationConnector Association="CLDBModel.FK__CL_SUPERI__REVIE__5006DFF2" />
+        <AssociationConnector Association="CLDBModel.FK__CL_SUPERI__SUPER__4F12BBB9" />
+        <EntityTypeShape EntityType="CLDBModel.GET_JOB_EQUIPMENT_V" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CLDBModel.CL_JOB_EQUIPMENT_T" Width="1.5" PointX="24.875" PointY="19.375" />
+        <AssociationConnector Association="CLDBModel.FK_CR2_JOB_EQUIPMENT_CR2_JOB" />
+        <EntityTypeShape EntityType="CLDBModel.CL_CONTRACT_FLEET_T" Width="1.5" PointX="26.625" PointY="11.125" />
+        <AssociationConnector Association="CLDBModel.FK_CL_FOREMAN_FLEET_WI_CONTRACT_MASTER" />
+        <AssociationConnector Association="CLDBModel.FK_CL_FOREMAN_FLEET_WI_FLEET_MASTER" />
+        <AssociationConnector Association="CLDBModel.FK_CL_JOB_EQUIPMENT_T_CL_CONTRACT_FLEET_T" />
+        <AssociationConnector Association="CLDBModel.FK_CL_WEEKEND_MILES_STATUS_T_CL_CONTRACT_FLEET_T" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,42 @@
+﻿<div>
+    <h4>MATERIALS</h4>
+    @{
+
+
+        foreach (var manageMaterials in @Model.Materials.ManageMaterialsTransData)
+        {
+            @*<div>
+                    @labor.PhaseDescription
+                </div>*@
+            <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+                <thead>
+                    <tr>
+                        <th colspan="3">@manageMaterials.Phase_Code</th>
+                    </tr>
+                    <tr>
+                        <th style="width:35%;"> MISC DESCRIPTION</th>
+                        <th style="width:35%;">VENDOR</th>
+                        <th style="width:15%;">QUANTITY</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var material in manageMaterials.ManageMaterialsTransData)
+                    {
+
+                        <tr>
+                            <td>@material.Description</td>
+                            <td>@material.Vendor</td>
+                            <td>@material.Quantity</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div style="padding:10px">
+
+            </div>
+        }
+
+    }
+</div>

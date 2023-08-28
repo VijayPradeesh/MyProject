@@ -1,0 +1,18 @@
+5,Select the contract 'TECO MIAMI BLANKET', In T&E-additional inputs the 'start time' option is working properly for first two address,
+ but other address not displaying the time with in the screen.
+6,Select the contract 'TECO MIAMI BLANKET', In T&E-additional inputs the 'start time' option is working properly for first two address,
+ but other address not coming back when click the screen.
+7,Select the contract 'TECO MIAMI BLANKET', In T&E-additional inputs the 'End time' option is working properly for first two address, 
+but other address not displaying the time with in the screen.
+8,Select the contract 'TECO MIAMI BLANKET', In T&E-additional inputs the 'End time' option is working properly for first two address, 
+but other address not coming back when click the screen.
+9,In the T&E- additional input break time can be display for minutes, but it does not have a note's like for 60 minute up to 1 hours or can 
+have water make as 'Minutes'.
+10,After completing 'teco miami' contract, checking the T&E DFR template, clicking the generate DFR CTA, in the pdf alignment issue in job description, 
+the lines are generated multiple times.
+11,After completing 'teco miami' contract, checking the T&E DFR template, clicking the generate DFR CTA, in the pdf alignment issue in 'personnel and equip, 
+time charged', not in the proper order.
+12,After completing 'teco miami' contract, checking the T&E DFR template, clicking the generate DFR CTA, in the pdf alignment issue in 'personnel and equip, 
+time charged', not showing the data when provided more than 6 entries.
+13,After completing 'teco miami' contract, checking the T&E DFR template, clicking the generate DFR CTA, in the pdf 'DAY Tuesday' can be have a colon symbol 
+like 'DAY : Tuesday'.

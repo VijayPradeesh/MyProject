@@ -1,0 +1,111 @@
+﻿<div>
+    <h4>ADDITIONAL INPUT</h4>
+    <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+        <tr>
+            <th colspan="2">
+                SUMMARY OF WORK/COMMENTS
+            </th>
+        </tr>
+        @foreach (var item in Model.comments)
+        {
+            <tr>
+                <td>
+                    @item.phaseCode
+                </td>
+                @if (item.comment == "")
+                {
+                    <td>
+                        No Record Found
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @item.comment
+                    </td>
+                }
+
+            </tr>
+        }
+    </table>
+    <div class="clear">&nbsp;</div>
+    @if (Model.JobNumber.Substring(0, 3) == "912" || Model.JobNumber.Substring(0, 3) == "913")
+    {
+        <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+            <thead>
+                <tr>
+                    <th colspan="1">TOMORROW'S PLAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="1">
+                        @Model.tomorrowsPlan
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div class="clear">&nbsp;</div>
+    }
+
+    @if (Model.JobNumber.Substring(0, 3) == "914" || Model.JobNumber.Substring(0, 3) == "911")
+    {
+        <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+            <thead>
+                <tr>
+                    <th colspan="1">NARRATIVE OF DELAYS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="1">
+                        @Model.NarrativeOfDelays
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div class="clear">&nbsp;</div>
+    }
+    @if (Model.JobNumber.Substring(0, 3) == "914" || Model.JobNumber.Substring(0, 3) == "911")
+    {
+        <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        MILAGE SUMMARY
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="1">SURVEY TYPE</th>
+                    <th colspan="1">MILAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.surveyProductivity.Count == 0)
+                {
+                    foreach (var item in Model.surveyProductivity)
+                    {
+                        <tr>
+                            <td colspan="1">@item.surveyType</td>
+                            <td colspan="1">@item.footage</td>
+                        </tr>
+                    }
+
+
+
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2">No Record Found</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+
+
+</div>

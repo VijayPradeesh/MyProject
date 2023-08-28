@@ -1,0 +1,42 @@
+﻿<div>
+    <h4>Equipment</h4>
+    @{
+
+
+        foreach (var equip in @Model.equipmentPhase)
+        {
+            @*<div>
+                    @labor.PhaseDescription
+                </div>*@
+            <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+                <thead>
+                    <tr>
+                        <th colspan="3">@equip.PhaseCodeDescription</th>
+                    </tr>
+                    <tr>
+                        <th style="width:35%;">EQUIPMENT DESCRIPTION</th>
+                        <th style="width:35%;">UNIT NO</th>
+                        <th style="width:15%;">Hours</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var equipment in equip.equipments)
+                    {
+
+                        <tr>
+                            <td>@equipment.equipmentName</td>
+                            <td>@equipment.equipmentCode</td>
+                            <td>@equipment.hrs</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div style="padding:10px">
+
+            </div>
+        }
+
+    }
+</div>

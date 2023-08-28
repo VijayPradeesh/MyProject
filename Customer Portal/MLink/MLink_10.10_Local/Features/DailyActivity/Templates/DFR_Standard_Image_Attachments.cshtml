@@ -1,0 +1,72 @@
+﻿<div>
+
+    @{
+        if (!Model.JobImages.ImageDataInfo.Count.Equals(0))
+        {
+            <div style="text-align:center;">
+                <h4>D.Image Attachments</h4>
+
+
+                @{
+                    foreach (var image in Model.JobImages.ImageDataInfo)
+                    {
+                        if (image.ImageData != null && image.ImageData != "")
+                        {
+                            var base64 = "";
+                            if (image.ImageData.Contains("data:image/jpeg;base64,"))
+                            {
+                                base64 = image.ImageData.Replace("data:image/jpeg;base64,", "");
+                            }
+                            else
+                            {
+                                base64 = image.ImageData.Replace("data:image/png;base64,", "");
+                            }
+                            byte[] imageBytes = Convert.FromBase64String(base64);
+                            using (var ms = new System.IO.MemoryStream(imageBytes))
+                            {
+                                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+
+                                if (img.Height >= img.Width)
+                                {
+                                    <div style="width:200px;height:200px;border: 10px solid #000;padding: 5px;border-radius:4px;float:left;">
+
+                                        <img src="@image.ImageData" style="max-width:100%;height:100%;" />
+
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div style="width:200px;height:200px;border: 10px solid #000;padding: 5px;border-radius:4px;float:left;">
+
+                                        <img src="@image.ImageData" style="max-height:100%;width:100%;" />
+
+                                    </div>
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+
+
+
+            </div>
+        }
+        else
+        {
+            <h4>D.Image Attachments</h4>
+            <div style="height:30px;font-size: 12px;">
+                <table class="firstDiv">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>No images were Found</b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>

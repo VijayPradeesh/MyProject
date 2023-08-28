@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Roboto,sans-serif;
+            font-size: 14px;
+            line-height: 1.57142857;
+            color: black;
+        }
+
+        table, th, td {
+            border-style: solid;
+            border-width: 1px;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            border-style: solid;
+            border-width: .01px;
+        }
+
+        table th {
+            background: #ccc;
+        }
+
+        #tblheader th, #tblheader td {
+            background-color: white;
+            text-align: left;
+            border-color: white;
+            padding-bottom:1px;
+        }
+
+        .firstDiv #tblheader tr, .firstDiv #tblheader tr td, .firstDiv #tblheader tr th {
+            page-break-inside: avoid !important;
+        }
+
+        .mainDiv {
+            width: 97%;
+            padding: 3px 1.8%;
+            display: block;
+            border: solid 1px black;
+        }
+
+            .mainDiv table {
+                align: center;
+            }
+
+            .tbl-1 td {
+            padding: 7px 0px;
+            border:none;
+        }
+
+        .firstDiv {
+            width: 100%;
+        }
+
+        .ipTable {
+            display: block;
+            width: 100%;
+        }
+
+        .ipTableRow {
+            clear: both;
+        }
+
+        .ipTableCell, .ipTableHead {
+            float: left;
+            height: 25px;
+            overflow: hidden;
+            padding: 3px 1.8px;
+            width: 15.5%;
+            font-size: 85%;
+        }
+
+        .ipTable:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+
+        .inputTxt {
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .inputTxt1 {
+            border: 1px solid #ccc;
+            width: 70%;
+        }
+
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #ccc;
+        }
+
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #ccc;
+            opacity: 1;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #ccc;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ccc;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #ccc;
+        }
+
+        .rTableRow:nth-child(odd) .rTableCell {
+            background: #ECECEC;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            /*font-size: 96%;*/
+        }
+
+        }
+
+        .clrClass {
+            clear: both;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 20px;
+            margin-left: 0px;
+            text-align: left;
+        }
+
+        h4 {
+            font-size: 14px;
+            margin: 15px;
+            margin-left: 0px;
+            margin-bottom: 8px;
+            padding-top: 5px;
+            text-align: left;
+        }
+
+        h5 {
+            font-size: 11px;
+            padding-top: 3px;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        .botDiv {
+            float: left;
+            width: 50%;
+        }
+
+        .txtAreaDiv {
+            width: 70%;
+            height: 125px;
+            border: solid 1px #000000;
+        }
+
+        .margin-l29 {
+            margin-left: 29%;
+        }
+
+        .txtRightDiv {
+            text-align: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .logo {
+            font-size: 18px;
+            margin: 20px;
+            margin-right: 0px;
+            text-align: right;
+        }
+
+        .tdborder {
+            border: none;
+            border-width: 0px;
+        }
+
+        .tblHeaderCls {
+            text-align:left; 
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+<body style="margin-left:10px;margin-right:10px;">
+
+    <table style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+        <thead>
+            <tr>
+                <td class="tdborder" colspan="2" style="text-align:right;">Reference Id: @Model.UniqueJobId</td>
+            </tr>
+            <tr>
+                <td class="tdborder" style="padding-top:23px;padding-left:380px;"><h1 style="text-align:center">Standard Daily Field Report</h1></td>
+                <td class="tdborder"><h5 class="logo"><img src=@Model.LogoImagePath style="height:40px;width:150px;" /></h5></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tdborder">
+                <td colspan="2" class="tdborder">
+
+                    <table id="tblheader" style="border:none 0px black;width:100%;background:none;vertical-align:bottom;">
+                            <tbody>
+                                <tr>
+                                    <td class="tblHeaderCls">Contract:</td>
+                                    <td style="border-bottom: 1px solid #000000;">@Model.ContractNumber</td><td>&nbsp;</td>
+
+                                    <td class="tblHeaderCls">Approver: </td>
+                                    <td style="border-bottom: 1px solid #000000;">@Model.SuperintendentName</td><td>&nbsp;</td>
+
+                                    <td class="tblHeaderCls">Foreman: </td>
+                                    <td style="border-bottom: 1px solid #000000;">@Model.ForemanName</td><td>&nbsp;</td>
+
+                                    <td class="tblHeaderCls">Job #: </td>
+                                    <td style="border-bottom: 1px solid #000000;">@Model.JobNumber</td><td>&nbsp;</td>
+
+                                    <td class="tblHeaderCls">Date: </td>
+                                    <td style="border-bottom: 1px solid #000000;">@Model.ActivityDate.ToString("MM/dd/yyyy")</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    <div class="clear">&nbsp;</div>

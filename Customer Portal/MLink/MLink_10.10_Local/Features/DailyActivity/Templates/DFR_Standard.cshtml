@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Roboto,sans-serif;
+            font-size: 14px;
+            line-height: 1.57142857;
+            color: black;
+        }
+
+        table, th, td {
+            border-style: solid;
+            border-width: 1px;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+            border-style: solid;
+            border-width: .01px;
+        }
+
+            table th {
+                background: #ccc;
+            }
+
+        #tblheader th, #tblheader td {
+            background-color: white;
+            text-align: left;
+            border-color: white;
+            padding-bottom: 1px;
+        }
+
+        .firstDiv #tblheader tr, .firstDiv #tblheader tr td, .firstDiv #tblheader tr th {
+            page-break-inside: avoid !important;
+        }
+
+        .mainDiv {
+            width: 97%;
+            padding: 3px 1.8%;
+            display: block;
+            border: solid 1px black;
+        }
+
+            .mainDiv table {
+                align: center;
+            }
+
+        .tbl-1 td {
+            padding: 7px 0px;
+            border: none;
+        }
+
+        .firstDiv {
+            width: 100%;
+        }
+
+        .ipTable {
+            display: block;
+            width: 100%;
+        }
+
+        .ipTableRow {
+            clear: both;
+        }
+
+        .ipTableCell, .ipTableHead {
+            float: left;
+            height: 25px;
+            overflow: hidden;
+            padding: 3px 1.8px;
+            width: 15.5%;
+            font-size: 85%;
+        }
+
+        .ipTable:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+
+        .inputTxt {
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .inputTxt1 {
+            border: 1px solid #ccc;
+            width: 70%;
+        }
+
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #ccc;
+        }
+
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #ccc;
+            opacity: 1;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #ccc;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ccc;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #ccc;
+        }
+
+        .rTableRow:nth-child(odd) .rTableCell {
+            background: #ECECEC;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            /*font-size: 96%;*/
+        }
+
+        }
+
+        .clrClass {
+            clear: both;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 20px;
+            margin-left: 0px;
+            text-align: left;
+        }
+
+        h4 {
+            font-size: 14px;
+            margin: 15px;
+            margin-left: 0px;
+            margin-bottom: 8px;
+            padding-top: 5px;
+            text-align: left;
+        }
+
+        h5 {
+            font-size: 11px;
+            padding-top: 3px;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        .botDiv {
+            float: left;
+            width: 50%;
+        }
+
+        .txtAreaDiv {
+            width: 70%;
+            height: 125px;
+            border: solid 1px #000000;
+        }
+
+        .margin-l29 {
+            margin-left: 29%;
+        }
+
+        .txtRightDiv {
+            text-align: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .logo {
+            font-size: 18px;
+            margin: 20px;
+            margin-right: 0px;
+            text-align: right;
+        }
+
+        .tdborder {
+            border: none;
+            border-width: 0px;
+        }
+
+        .tblHeaderCls {
+            text-align: left;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body style="margin-left:10px;margin-right:10px;">
+
+    <table style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+        <thead>
+            <tr>
+                <td class="tdborder" colspan="2" style="text-align:right;">Reference Id: @Model.UniqueJobId</td>
+            </tr>
+            <tr>
+                <td class="tdborder" colspan="2"  style="padding-top:23px;"><h1 style="text-align:center">Daily Summary Report</h1></td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tdborder">
+                <td colspan="2" class="tdborder">
+
+                    <table id="tblheader" style="border: none 0px black; width: 100%; background: none; vertical-align: bottom; repeat-header: yes; repeat-footer: yes;">
+                        <tbody>
+                            <tr>
+                                @*<td class="tblHeaderCls">Contract:</td>
+                    <td style="border-bottom: 1px solid #000000;">@Model.ContractNumber</td><td>&nbsp;</td>*@
+
+                                <td class="tblHeaderCls">Approver: </td>
+                                <td style="border-bottom: 1px solid #000000;">@Model.SuperintendentName</td>
+                                <td>&nbsp;</td>
+
+                                <td class="tblHeaderCls">Foreman: </td>
+                                <td style="border-bottom: 1px solid #000000;">@Model.ForemanName</td>
+                                <td>&nbsp;</td>
+
+                                <td class="tblHeaderCls">Job #: </td>
+                                <td style="border-bottom: 1px solid #000000;">@Model.JobNumber</td>
+                                <td>&nbsp;</td>
+
+                                <td class="tblHeaderCls">Date: </td>
+                                <td style="border-bottom: 1px solid #000000;">@Model.ActivityDate.ToString("MM/dd/yyyy")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="clear">&nbsp;</div>
+                    <table style="width:35%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+                        <tr>
+                            <th colspan="1" width="30%">PO#</th>
+                            <td colspan="2" width="70%">@Model.PoNumber</td>
+
+                        </tr>
+                        <tr>
+                            <th colspan="1" width="30%">CLIENT NAME</th>
+                            <td colspan="2" width="70%">@Model.ContactName</td>
+                        </tr>
+                        <tr>
+                            <th colspan="1" width="30%">CLIENT CONTACT PHONE</th>
+                            <td colspan="2" width="70%">@Model.COntactNumber</td>
+                        </tr>
+
+                    </table>
+                    <!--Labor-->
+                    @if (Model.ShowLabor == true)
+                    {
+                        <div>
+                            <h4>LABOR</h4>
+                            @{
+
+
+                                foreach (var labor in @Model.LaborPhase)
+                                {
+                                    @*<div>
+                            @labor.PhaseDescription
+                        </div>*@
+                                    <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="4">@labor.PhaseDescription</th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width:35%;">EMPLOYEE POSITION</th>
+                                                <th style="width:35%;">EMPLOYEE NAME</th>
+                                                <th style="width:15%;">HOURS</th>
+                                                <th style="width:15%;">PD</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var employee in labor.employees)
+                                            {
+                                                if (employee.isSubcontractEmployee == false)
+                                                {
+                                                    <tr>
+                                                        <td>@employee.employeeTitle</td>
+                                                        <td>@employee.employeeName</td>
+                                                        <td>@employee.hrs</td>
+                                                        <td>@employee.pd</td>
+                                                    </tr>
+                                                }
+
+
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div style="padding:10px">
+
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    }
+                    <!--Equipment-->
+                    @if (Model.ShowEquipment)
+                    {
+                        <div>
+                            <h4>EQUIPMENT</h4>
+                            @{
+
+
+                                foreach (var equip in @Model.equipmentPhase)
+                                {
+                                    @*<div>
+                            @labor.PhaseDescription
+                        </div>*@
+                                    <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3">@equip.PhaseCodeDescription</th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width:35%;">EQUIPMENT DESCRIPTION</th>
+                                                <th style="width:35%;">UNIT NO</th>
+                                                <th style="width:15%;">HOURS</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var equipment in equip.equipments)
+                                            {
+
+                                                <tr>
+                                                    <td>@equipment.equipmentName</td>
+                                                    <td>@equipment.equipmentCode</td>
+                                                    <td>@equipment.hrs</td>
+
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div style="padding:10px">
+
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    }
+
+
+                    <!--Materials-->
+                    @if(Model.ShowMaterials)
+            {
+                <div>
+                    <h4 style="repeat-header:yes;repeat-footer:yes;">MATERIALS</h4>
+                    @{
+                        if(@Model.Materials.ManageMaterialsTransData.Count == 0)
+                {
+                            
+                            <table class="firstDiv">
+                                <tr>
+                                    <td>
+                                        No Records Found
+                                    </td>
+                                </tr>
+                            </table>
+                }
+
+                        foreach (var manageMaterials in @Model.Materials.ManageMaterialsTransData)
+                        {
+                            @*<div>
+                    @labor.PhaseDescription
+                </div>*@
+                            <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">@manageMaterials.Phase_Code</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width:35%;">MISC DESCRIPTION</th>
+                                        <th style="width:35%;">VENDOR</th>
+                                        <th style="width:15%;">QUANTITY</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var material in manageMaterials.ManageMaterialsTransData)
+                                    {
+
+                                        <tr>
+                                            <td>@material.Description</td>
+                                            <td>@material.Vendor</td>
+                                            <td>@material.Quantity</td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div style="padding:10px">
+
+                            </div>
+                        }
+
+                    }
+                </div>
+            }
+                    
+                    <!--Additional Input-->
+                    <div>
+                        <h4>ADDITIONAL INPUT</h4>
+                        <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+                            <tr>
+                                <th colspan="2">
+                                    SUMMARY OF WORK/COMMENTS
+                                </th>
+                            </tr>
+                            @foreach (var item in Model.comments)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.phaseCode
+                                    </td>
+                                    @if (item.comment == "")
+                                    {
+                                        <td>
+                                            No Record Found
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            @item.comment
+                                        </td>
+                                    }
+
+                                </tr>
+                            }
+                        </table>
+                        <div class="clear">&nbsp;</div>
+                        @if (Model.JobNumber.Substring(0, 3) == "912" || Model.JobNumber.Substring(0, 3) == "913")
+                        {
+                            <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+                                <thead>
+                                    <tr>
+                                        <th colspan="1">TOMORROW'S PLAN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="1">
+                                            @Model.tomorrowsPlan
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <div class="clear">&nbsp;</div>
+                        }
+
+                        @if (Model.JobNumber.Substring(0, 3) == "914" || Model.JobNumber.Substring(0, 3) == "911")
+                        {
+                            <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+                                <thead>
+                                    <tr>
+                                        <th colspan="1">NARRATIVE OF DELAYS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="1">
+                                            @Model.NarrativeOfDelays
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <div class="clear">&nbsp;</div>
+                        }
+                        @if (Model.JobNumber.Substring(0, 3) == "914" || Model.JobNumber.Substring(0, 3) == "911")
+                        {
+                            <table class="firstDiv" style="width:100%;border:none;border-width:0px;repeat-header:yes;repeat-footer:yes;">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">
+                                            MILEAGE SUMMARY
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="1" width="50%">SURVEY TYPE</th>
+                                        <th colspan="1" width="50%">MILAGE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.surveyProductivity.Count != 0)
+                                    {
+                                        foreach (var item in Model.surveyProductivity)
+                                        {
+                                            <tr>
+                                                <td colspan="1">@item.surveyType</td>
+                                                <td colspan="1">@item.footage</td>
+                                            </tr>
+                                        }
+
+
+
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="2">No Record Found</td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        }
+
+
+                    </div>
+                    <!--Signature-->
+                    <div style="height:80px;"></div>
+                    <div class="firstDiv clrClass" style="height:150px;">
+                        <table id="tblheader" style="border:none 0px black;width:100%;background:none;">
+                            <tbody>
+                                <tr>
+                                    <td class="tblHeaderCls" style="width:20px;vertical-align:bottom;">Customer Representative:</td>
+                                    @{
+                                        if (!string.IsNullOrEmpty(@Model.ForemanSignature))
+                                        {
+                                            <td style="border-bottom: 1px solid #000000;">
+                                                <img src=@Model.ForemanSignature style="width:240px;height:100px;align-content:center;" />
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td style="border-bottom: 1px solid #000000;width:125px;"></td>
+                                        }
+                                    }
+                                    <td>&nbsp;</td>
+
+                                    <td class="tblHeaderCls" style="width:20px;vertical-align:bottom;">Mears Representative: </td>
+
+                                    @{
+                                        if (!string.IsNullOrEmpty(@Model.InspectorSignature))
+                                        {
+                                            <td style="border-bottom: 1px solid #000000;">
+                                                <img src=@Model.InspectorSignature style="width:240px;height:100px;align-content:center;" />
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td style="border-bottom: 1px solid #000000;width:125px;"></td>
+                                        }
+                                    }
+                                    <td>&nbsp;</td>
+
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

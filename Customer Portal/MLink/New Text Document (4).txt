@@ -1,0 +1,46 @@
+TM_JOB_LABOR_T
+TM_JOB_TABLE_T
+TM_FOREMAN_CREW_T
+WI_EMPLOYEE_MASTER_T
+
+
+var laborActivity= await (from labor in _context.LaborsActivity
+                           join job in _context.Activities on labor.ActivityId equals job.Id
+                           join crew in _context.ForemanCrews on labor.ForemanCrewId equals crew. Id
+                           join user in _context.Employees on crew.CrewMemberEmployeeId equals user.Id
+                           where labor.Active && labor.ActivityId == activityId
+                           orderby labor.Modified
+                           select new
+                           {
+                               ActivityPhaseCodeId = labor.PhaseCodeActivity.PhaseCode.Id,
+                               PhaseCodeValue = labor.PhaseCodeActivity.PhaseCode.PhaseCodeValue,
+                               PhaseCodeDescription = labor.PhaseCodeActivity.PhaseCode.PhaseCodeDescription,
+                               ActivityLaborId = labor.Id,
+                               EmployeeId = user.Id,
+                               EmployeeName = user.EmployeeName,
+                               EmployeeCode=user.EmployeeNumber,
+                               Hours = labor.Hours,
+                               PD = labor.PD,
+                               AD = labor.AD,
+                               TruckPay = labor.TruckPay,
+                               RigPay = labor.RigPay,
+                               SickPay = labor.SickPay,
+                               HolidayPay = labor.HolidayPay,
+                               VacationPay=labor.VacationPay,
+                               OT=labor.OT,
+                               DT=labor.DT,
+                               BillCode = labor.BillingCode,
+                               PhaseCode = labor.PhaseCode,
+                               UnionCode = labor.UnionCode,
+                               PayLevel=labor.PayLevel,
+                               LeaveReason = labor.SickLeaveReason,
+                               ActivityDate = job.ActivityDate,
+                               JobPhaseCodeId = labor.ActivityPhaseCodeId,
+                               labor.CompanyId
+                           }).ToListAsync();
+
+
+
+  select  trans.ADDITIONAL_INFO_TRANS_ID, mas.ADDITIONAL_INFO_NAME, trans.VALUE, trans.phaseCode, trans.ITEM_ORDER, trans.ISACTIVE from [MLink.Development].[dbo].[ML_DSR_ADDITIONAL_INFO_TRANS_T] as trans
+  join [MLink.Development].[dbo].[ML_DSR_ADDITIONAL_INFO_MASTER_T] as mas on trans.ADDITIONAL_INFO_ID = mas.ADDITIONAL_INFO_ID
+  where trans.ISACTIVE = 1

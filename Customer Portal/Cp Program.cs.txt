@@ -1,0 +1,145 @@
+using CustomerPortal.Services.Controllers.Helper;
+using CustomerPortal.Services.Controllers.Helper.Auth;
+using CustomerPortal.Services.Core.ApplicationDbContext;
+using CustomerPortal.Services.Core.Crypto;
+using CustomerPortal.Services.Repositories.Auth;
+using CustomerPortal.Services.Repositories.ErrorLogging;
+using CustomerPortal.Services.Repositories.JobActivityRepo;
+using CustomerPortal.Services.Repositories.LookUpRepo;
+using CustomerPortal.Services.Repositories.UserRepo;
+using CustomerPortal.Services.Services.Auth;
+using CustomerPortal.Services.Services.ErrorLogging;
+using CustomerPortal.Services.Services.JobActivity;
+using CustomerPortal.Services.Services.LookUp;
+using CustomerPortal.Services.Services.UserService;
+using CustomerPortal.Services.Validations.AccountUser;
+using DbUp;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
+using Microsoft.AspNetCore.HttpOverrides;
+using System.Text;
+using System.Security.Cryptography;
+using CustomerPortal.Services.Configuration;
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+
+
+//------------Environment Variable set up------------//
+var value = Environment.GetEnvironmentVariables();
+//-------Azure Key Vault Set Up---------------//
+string uri = "https://cpconfigkey.vault.azure.net/";
+ClientSecretCredential credentials = new ClientSecretCredential("8399c1c2-9c1b-4d0d-97fb-e0cfed231878", "38808189-fa7a-4d8a-807f-eba01edacca6", "CPConfigKey");
+SecretClient secretClient = new SecretClient(vaultUri :new Uri(uri), credential: new DefaultAzureCredential());
+var secretValue = secretClient.GetSecret("secret");
+//--------------------------------------------//
+var builder = WebApplication.CreateBuilder(args);
+var connection = builder.Configuration["SecretConnection:ConnectionString"];
+var env = builder.Configuration["environment"];
+Env.environment = builder.Configuration["Environment"];
+var cipher = builder.Configuration.GetConnectionString("ConnectionString");
+//----------In memory evironment set up-------------------------//
+string key = env == "DEV" ? CPConfiguration.Key : env == "QA" ? CPConfigurationQA.Key : CPConfigurationProd.Key;
+string Issuer = env == "DEV" ? CPConfiguration.Issuer : env == "QA" ? CPConfigurationQA.Issuer : CPConfigurationProd.Issuer;
+string Audience = env == "DEV" ? CPConfiguration.Audience : env == "QA" ? CPConfigurationQA.Audience : CPConfigurationProd.Audience;
+string Token = env == "DEV" ? CPConfiguration.Key : env == "QA" ? CPConfigurationQA.Key : CPConfigurationProd.Key;
+//---------------------------------------------------------------//
+var data = Convert.FromBase64String(connection);
+var modifiedConnectionString = "";
+using (var md5 = new MD5CryptoServiceProvider())
+{
+    var keys = md5.ComputeHash(Encoding.UTF8.GetBytes(key));
+
+    using (var tripDes = new TripleDESCryptoServiceProvider()
+    {
+        Key = keys,
+        Mode = CipherMode.ECB,
+        Padding = PaddingMode.PKCS7
+    })
+    {
+        var transform = tripDes.CreateDecryptor();
+        var results = transform.TransformFinalBlock(data, 0, data.Length);
+        modifiedConnectionString = Encoding.UTF8.GetString(results);
+    }
+}
+builder.Services.AddDbContext<CustomerPortalDbContext>(options =>
+{
+    options.UseSqlServer(modifiedConnectionString);
+});
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+         a => a.WithOrigins("*").AllowAnyMethod()
+         .AllowAnyHeader());
+});
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAuthRepo, AuthRepo>();
+builder.Services.AddScoped<ICrypto, Crypto>();
+builder.Services.AddScoped<ILookUp, LookUp>();
+builder.Services.AddScoped<ILookUpRepo, LookUpRepo>();
+builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IEditUserDataValidations, EditUserDataValidations>();
+builder.Services.AddScoped<IJobActivityService, JobActivityService>();
+builder.Services.AddScoped<IJobActivityRepo, JobActivityRepo>();
+builder.Services.AddScoped<IAuthHelper, AuthHelper>();
+builder.Services.AddScoped<IErrorLogging, ErrorLogging>();
+builder.Services.AddScoped<IErrorLoggingRepo, ErrorLoggingRepo>();
+builder.Services.AddScoped<ICentralHelper, CentralHelper>();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
+        ValidIssuer = CPConfiguration.Issuer, //builder.Configuration["JwtSettings:Issuer"],
+        ValidAudience = CPConfiguration.Audience,  // builder.Configuration["JwtSettings:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes
+        ( CPConfiguration.Token /*builder.Configuration["JwtSettings:Token"]*/))
+    };
+});
+//Log.Logger = new LoggerConfiguration().CreateBootstrapLogger();
+//builder.Host.UseSerilog((hostContext, configuration) =>
+//{
+//    configuration.WriteTo.MSSqlServer(connectionString, "Logs");
+//});
+
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
+var app = builder.Build();
+app.UseForwardedHeaders();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+app.UseCors("AllowAll");
+app.UseHttpsRedirection();
+app.UseAuthentication();
+// app.UseSerilogRequestLogging();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

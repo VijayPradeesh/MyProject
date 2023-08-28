@@ -1,0 +1,22 @@
+entered the mail code block 14-12-2021 14:06:34
+System.Security.Authentication.AuthenticationException: The user name or password is incorrect.
+ ---> System.DirectoryServices.DirectoryServicesCOMException: The user name or password is incorrect.
+
+   at System.DirectoryServices.DirectoryEntry.Bind(Boolean throwIfFail)
+   at System.DirectoryServices.DirectoryEntry.Bind()
+   at System.DirectoryServices.DirectoryEntry.get_SchemaEntry()
+   at System.DirectoryServices.AccountManagement.ADStoreCtx.IsContainer(DirectoryEntry de)
+   at System.DirectoryServices.AccountManagement.ADStoreCtx..ctor(DirectoryEntry ctxBase, Boolean ownCtxBase, String username, String password, ContextOptions options)
+   at System.DirectoryServices.AccountManagement.PrincipalContext.CreateContextFromDirectoryEntry(DirectoryEntry entry)
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoLDAPDirectoryInit()
+   --- End of inner exception stack trace ---
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoLDAPDirectoryInit()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoDomainInit()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.Initialize()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.get_QueryCtx()
+   at System.DirectoryServices.AccountManagement.Principal.FindByIdentityWithTypeHelper(PrincipalContext context, Type principalType, Nullable`1 identityType, String identityValue, DateTime refDate)
+   at System.DirectoryServices.AccountManagement.Principal.FindByIdentityWithType(PrincipalContext context, Type principalType, String identityValue)
+   at System.DirectoryServices.AccountManagement.UserPrincipal.FindByIdentity(PrincipalContext context, String identityValue)
+   at CrewlinkServices.Core.Identity.ActiveDirectoryService.GetEmailAddress(String username)
+   at CrewlinkServices.Features.DailyActivity.RevenueExport.GetDFRReport.EmailDFRReport.SendReportAsEmail(MemoryStream streamObj, String fileName, ReportTemplateUrlViewModel request, IActiveDirectoryService adService)
+   at CrewlinkServices.Features.DailyActivity.RevenueExport.ReportQueryController.<getZipFile>d__26.MoveNext() 14-12-2021 14:06:36

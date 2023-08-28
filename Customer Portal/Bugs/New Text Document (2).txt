@@ -1,0 +1,99 @@
+  function selectForeman(item, selectedForeman) {
+    selectedForeman.sort = selectedForeman.hasSelected ? -1 : 1;
+    vm.selectedForemanTotalCount = angular.equals(selectedForeman.sort, -1) ? vm.selectedForemanCount++ : vm.selectedForemanCount--;
+    getSelectedForeman(vm.foremanList);
+    if (vm.foremanList.length !== vm.selectedForemanCount) {
+      vm.selectAll = -1;
+    }
+    if (vm.foremanList.length === vm.selectedForemanCount) {
+      vm.selectAll = 1;
+    }
+  }
+
+1.Login as foreman/reviewer/approver, on clicking the Dismissed notifications section on clicking the Bell icon, the texts are not translated into Spanish
+
+
+2.Login as foreman/reviewer/approver, in the Dashboard, on clicking Review CTA across any job, in the Labor section, the alignments of the header text and 
+the numbers below are uneven. They need to be aligned in case of Spanish mode. --- completed
+5.Login as reviewer/approver, in the Dashboard, in the Create Crewlink User, while trying to add an user, the dropdown placeholder text is not translated to Spanish -- completed
+
+On selecting the contract and clicking on 'Create Folder', check the checkbox on the top menu bar, and uncheck the individual checkboxes below, the checkbox
+ on the top menu bar is still checked --- completed
+
+Login as reviewer/approver,in the Manage Foreman Settings section, while trying to add crew/fleet in Dashboard/Labor and Equipment pages, the dropdown
+ placeholder texts are not translated to Spanish --- completed
+
+transport: function(params, success, failure) {
+          dataService.getAsync('foremanSettings/foreman/search/crew?id=' + foremanId, params.data)
+            .then(function(response) {
+              success(response.data.availableEmployees);
+            });
+        },
+
+1.While the user is changing the language from Spanish to English and vice-versa, in Crew/Equipment section in Dashboard page, 
+the dropdown placeholder texts are not translated into Spanish/Spanish to English immediately. --- completed
+
+2.Login as foreman/reviewer/approver, In Job Details page, in Labor section, the column header texts are cramped and not displayed properly; 
+the text 'Address' in Image Attachments section is not translated to Spanish in case image(s) are attached. --- completed
+
+3.Login as foreman/reviewer/approver, click on Review across any Resurfacing job, in Cut Sheets and Restoration page, the words 'Temporary Surfaces' and 
+'Total (cu. yards)' are not translated to Spanish. --- completed
+
+4.Login as reviewer/approver, On clicking the 'Lockdown week' CTA in Dashboard, the text in the popup is not translated to Spanish. ---completed
+
+5.Login as reviewer/approver, on selecting the contract and clicking on 'Create Folder', check the checkbox on the top menu bar, and uncheck the individual 
+checkboxes below, the checkbox on the top menu bar is still checked. --- completed
+
+6.Login as foreman/reviewer/approver, in History tab and My Actions tab, click on a job, in the Job Details page, texts like 'Total Hrs', 'Daily Field Notes' 
+and the Stations section text are not translated to Spanish. --- completed
+
+7.Login as approver, on reversing/approving the jobs, the jobs in Pending status are not displayed in the Approved/Reversing popups. --- not data received
+8.Login as foreman/reviewer/approver, 'Choose File' ( no file chosen) option is not displayed/available in Drawing section. --- completed
+
+9.Login as foreman/reviewer/approver, in Duke Central Corridor jobs (special projects jobs), in DFR Additional Info page, the text 'Total Hrs' is in English; 
+the fields in Stations section is in English, the error messages are all displayed in English. ---- not required
+
+10.Login as foreman/reviewer/approver, in any job, in Labor/Equipment/Pay Item pages, the WBS description for the pay items is 
+not translated into Spanish. --- not required
+
+11.Login as foreman/reviewer/approver, in any Spire contract job, in the DFR Additional Info page, the Notes by Pay Item field and the texts with it are not 
+translated to Spanish. --- completed
+
+12.Login as foreman/reviewer/approver, in any contract job, in the Labor page, in the Daily Total/Weekly Total Hours popup, the column text 'Per Diem' is not 
+translated to Spanish. --- completed
+
+13.Login as foreman/reviewer/approver, in History section(for foremen)/ History section through Add Productivity( for reviewer/approver), the status 
+texts in the dropdown above the job cards are not translated to Spanish. --- completed
+
+14..Login as foreman/reviewer/approver, in Pay Item page, when user clicks on Group by Address option( in DTE Blanket jobs), the word 'Address' 
+in the label above every pay item is not translated to Spanish. --- completed
+
+TNEDFR BUGS
+1.Login as foreman/reviewer/approver, on clicking the Start Time and End Time, the clock is displayed, but on scrolling the page, the clock component is 
+running over the Crewlink upper banner. The page under the clock component should only scroll on scrolling.--- cannot be done
+
+2.Login as foreman/reviewer/approver, when the difference between the End Time and Start Time is 1hr and 3 min, it should be displayed as 01:03 instead of 
+1:3 to indicate the full time representation, likewise for all time representations( both in the form and in the DFR PDF). --- completed
+3.Login as reviewer/approver, in the Job Details page, in the Equipment section, the Daily Total and Weekly Total hours numbers need to be 
+aligned with the textboxes above.--- completed
+4.Login as reviewer/approver, in the Job Details page, the End Time box is small and the 'x' button is overlapping on the time(number). --- completed
+5.Login as foreman/reviewer/approver, when Start Time and End Time are entered, Total Time is calculated, now when the Start Time/End Time is 
+cancelled, the numbers in the Total Time box is displayed as it is, it should not be displayed. --- completed
+6.Login as reviewer/approver, in Approved/Reviewed state, the numbers in the Start Time and End Time boxes are light in color. 
+The font size should be increased or it should be in bold. --- completed
+7.Login as reviewer/approver, after the user has approved/reviewed the job, the values in the Start Time and End Time fields are 
+disappearing and when the user tries to reverse the job status, it is not allowing and an error message is displayed. --- completed
+
+List of items to be translated for the phase-2 of Spanish Translation:
+
+  1)Calculate Hours   
+
+  2)Black Hills DFR
+
+  3)Delete Multiple Favorite Folders
+
+  4)T&E DFR
+
+  5)Rental Equipments for special projects
+
+  6)Start station and End station

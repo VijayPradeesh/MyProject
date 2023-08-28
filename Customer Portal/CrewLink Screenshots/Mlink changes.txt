@@ -1,0 +1,7 @@
+labor screen --- alignment, 
+		disable color slight lighter
+
+materials -- save button/ icon smaller 
+	     delete icon color change
+
+	

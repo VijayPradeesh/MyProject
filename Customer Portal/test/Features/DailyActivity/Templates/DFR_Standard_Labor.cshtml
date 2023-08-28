@@ -1,0 +1,35 @@
+﻿<div>
+    <h4>B.Labor</h4>
+    <table class="firstDiv" style="repeat-header:yes;repeat-footer:yes;">
+        <thead>
+            <tr>
+                <th style="width:50%;">Employee</th>
+                <th style="width:10%;">ST Hours</th>
+                <th style="width:10%;">OT Hours</th>
+                <th style="width:10%;">DT Hours</th>
+                <th style="width:20%;">Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var laborrowcount = true;
+                foreach (var labor in @Model.LaborActivity)
+                {
+                    <tr>
+                        <td>@labor.EmployeeName</td>
+                        <td>@labor.StandardHours</td>
+                        <td>@labor.OvertimeHours</td>
+                        <td>@labor.DoubleTimeHours</td>
+                        @if (laborrowcount)
+                        {
+                            laborrowcount = false;
+                            <td rowspan="@Model.LaborCount">
+                                @Model.LaborComments
+                            </td>
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

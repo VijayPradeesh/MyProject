@@ -1,0 +1,264 @@
+{
+  "production": {
+    "headers": [
+      {
+        "value": "payitem",
+        "label": "PayItem"
+      },
+      {
+        "value": "description",
+        "label": "Description"
+      },
+      {
+        "value": "quantity",
+        "label": "Quantity"
+      },
+      {
+        "value": "wo",
+        "label": "WO#"
+      },
+      {
+        "value": "location",
+        "label": "Location"
+      }
+    ],
+    "body": [
+      {
+        "id": 1,
+        "payItem": "PayItem 1",
+        "description": "PayItem1Description",
+        "quantity": 3,
+        "workOrder": "workorder1",
+        "location": "address1",
+        "employee": null,
+        "st": 0,
+        "ot": 0,
+        "dt": 0,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": true
+      },
+      {
+        "id": 2,
+        "payItem": "PayItem 2",
+        "description": "PayItem2Description",
+        "quantity": 3,
+        "workOrder": "workorder2",
+        "location": "address2",
+        "employee": null,
+        "st": 0,
+        "ot": 0,
+        "dt": 0,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": true
+      }
+    ]
+  },
+  "labor": {
+    "headers": [
+      {
+        "value": "employee",
+        "label": "Employee"
+      },
+      {
+        "value": "ot",
+        "label": "OT"
+      },
+      {
+        "value": "dt",
+        "label": "DT"
+      },
+      {
+        "value": "st",
+        "label": "ST"
+      }
+    ],
+    "body": [
+      {
+        "id": 1,
+        "payItem": null,
+        "description": null,
+        "quantity": 0,
+        "workOrder": null,
+        "location": null,
+        "employee": "employee.one",
+        "st": 8,
+        "ot": 1,
+        "dt": 1,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": false
+      },
+      {
+        "id": 2,
+        "payItem": null,
+        "description": null,
+        "quantity": 0,
+        "workOrder": null,
+        "location": null,
+        "employee": "employee.two",
+        "st": 8,
+        "ot": 1,
+        "dt": 1,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": false
+      },
+      {
+        "id": 3,
+        "payItem": null,
+        "description": null,
+        "quantity": 0,
+        "workOrder": null,
+        "location": null,
+        "employee": "employee.three",
+        "st": 8,
+        "ot": 1,
+        "dt": 1,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": false
+      },
+      {
+        "id": 4,
+        "payItem": null,
+        "description": null,
+        "quantity": 0,
+        "workOrder": null,
+        "location": null,
+        "employee": "foreman.one",
+        "st": 8,
+        "ot": 1,
+        "dt": 1,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": false
+      }
+    ]
+  },
+  "tandM": {
+    "headers": [
+      {
+        "value": "payitem",
+        "label": "Pay Item"
+      },
+      {
+        "value": "description",
+        "label": "Description"
+      },
+      {
+        "value": "quantity",
+        "label": "Quantity"
+      },
+      {
+        "value": "wo",
+        "label": "WO#"
+      },
+      {
+        "value": "location",
+        "label": "Location"
+      }
+    ],
+    "body": [
+      {
+        "id": 1,
+        "payItem": "PayItem 1",
+        "description": "PayItem1Description",
+        "quantity": 3,
+        "workOrder": "workorder1",
+        "location": "address1",
+        "employee": null,
+        "st": 0,
+        "ot": 0,
+        "dt": 0,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": true
+      },
+      {
+        "id": 2,
+        "payItem": "PayItem 2",
+        "description": "PayItem2Description",
+        "quantity": 3,
+        "workOrder": "workorder2",
+        "location": "address2",
+        "employee": null,
+        "st": 0,
+        "ot": 0,
+        "dt": 0,
+        "equipment": null,
+        "hours": 0,
+        "isTandM": true
+      }
+    ]
+  },
+  "equipment": {
+    "headers": [
+      {
+        "value": "equipment",
+        "label": "Equipment"
+      },
+      {
+        "value": "description",
+        "label": "Description"
+      },
+      {
+        "value": "hours",
+        "label": "Hours"
+      }
+    ],
+    "body": [
+      {
+        "id": 0,
+        "payItem": null,
+        "description": "equipmentdescription1",
+        "quantity": 0,
+        "workOrder": null,
+        "location": null,
+        "employee": null,
+        "st": 0,
+        "ot": 0,
+        "dt": 0,
+        "equipment": "eq-c-1",
+        "hours": 4,
+        "isTandM": false
+      },
+      {
+        "id": 0,
+        "payItem": null,
+        "description": "equipmentdescription2",
+        "quantity": 0,
+        "workOrder": null,
+        "location": null,
+        "employee": null,
+        "st": 0,
+        "ot": 0,
+        "dt": 0,
+        "equipment": "eq-c-2",
+        "hours": 4,
+        "isTandM": false
+      },
+      {
+        "id": 0,
+        "payItem": null,
+        "description": "equipmentdescription3",
+        "quantity": 0,
+        "workOrder": null,
+        "location": null,
+        "employee": null,
+        "st": 0,
+        "ot": 0,
+        "dt": 0,
+        "equipment": "eq-c-3",
+        "hours": 4,
+        "isTandM": false
+      }
+    ]
+  },
+  "comments": {
+    "production": "Test payitem comments",
+    "labour": "Test labor comments",
+    "equipment": "Test equipment comments"
+  }
+}

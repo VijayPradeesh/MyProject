@@ -1,0 +1,17 @@
+Start Station and End Station --- completed --- 11.01.2022
+Spanish Translation bug fixes --- completed --- 01.02.2022
+T&E DFR --- completed --- 04.02.2022
+T&E DFR changes --- completed 10-02-2022
+Spanish Translation Phase 2, unable to reject resurfacing Jobs, Wgl Landover ph5 showing wrong
+dfr additional info  --- completed 14-02-2022
+Wgl Landover Ph5 Additional Info Screen --- completed 02-03-2022{list of 7 work items}
+Nashville sp changes --- completed 14-03-2022
+wgl landover ph4 changes-- completed
+Tne dfr template redesign -- completed
+Favorite contracts for foreman --- completed
+Bhne dfr feature --- completed
+T&E Dfr changes --- completed
+BHNE dfr -- rework --- completed
+Resurfacing changes --- completed
+Resurfacing changes --- rework --- completed
+DFR Export ---  completed

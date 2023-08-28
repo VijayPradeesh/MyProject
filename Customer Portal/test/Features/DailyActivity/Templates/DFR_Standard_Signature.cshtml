@@ -1,0 +1,51 @@
+﻿            <div style="height:80px;">&nbsp;</div>
+
+            <div class="firstDiv clrClass" style="height:150px;">
+                <table id="tblheader" style="border:none 0px black;width:100%;background:none;">
+                    <tbody>
+                        <tr>
+                            <td class="tblHeaderCls" style="width:20px;vertical-align:bottom;">Foreman:</td>
+                            @{
+                                if (!string.IsNullOrEmpty(@Model.ForemanSignature))
+                                {
+                                    <td style="border-bottom: 1px solid #000000;">
+                                        <img src=@Model.ForemanSignature style="width:240px;height:100px;align-content:center;" />
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="border-bottom: 1px solid #000000;width:125px;"></td>
+                                }
+                            }
+                            <td>&nbsp;</td>
+
+                            <td class="tblHeaderCls" style="width:20px;vertical-align:bottom;">Inspector: </td>
+
+                            @{
+                                if (!string.IsNullOrEmpty(@Model.InspectorSignature))
+                                {
+                                    <td style="border-bottom: 1px solid #000000;">
+                                        <img src=@Model.InspectorSignature style="width:240px;height:100px;align-content:center;" />
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td style="border-bottom: 1px solid #000000;width:125px;"></td>
+                                }
+                            }
+                            <td>&nbsp;</td>
+
+                            <td class="tblHeaderCls" style="width:25px;vertical-align:bottom;">Timestamp: </td>
+                            <td style="border-bottom: 0.5px solid #000000;width:125px;vertical-align:bottom;">@Model.ProcessDateAndTime</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+         </td>
+       </tr>
+     </tbody>
+   </table>
+</body>
+</html>

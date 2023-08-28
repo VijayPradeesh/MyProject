@@ -1,0 +1,227 @@
+[
+
+    {
+
+        "id": 1,
+
+        "firstName": "Admin",
+
+        "lastName": "Mears",
+
+        "email": "admin@psiog.com",
+
+        "lastLogin": "2022-11-23T16:28:55.923",
+
+        "isActive": true,
+
+        "isCurrentUser": false,
+
+        "type": [
+
+            {
+
+                "id": 4,
+
+                "type": "Mears"
+
+            }
+
+        ],
+
+        "role": [
+
+            {
+
+                "id": 6,
+
+                "role": "Admin"
+
+            }
+
+        ],
+
+        "region": [
+
+            {
+
+                "id": 9,
+
+                "region": "KC"
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        "id": 7,
+
+        "firstName": "Yuvraj",
+
+        "lastName": "Singh",
+
+        "email": "yuvi@psiog.com",
+
+        "lastLogin": "2022-11-23T17:55:45.75",
+
+        "isActive": true,
+
+        "isCurrentUser": false,
+
+        "type": [
+
+            {
+
+                "id": 5,
+
+                "type": "Spire"
+
+            }
+
+        ],
+
+        "role": [
+
+            {
+
+                "id": 7,
+
+                "role": "Inspector"
+
+            },
+
+            {
+
+                "id": 8,
+
+                "role": "Supervisor"
+
+            }
+
+        ],
+
+        "region": [
+
+            {
+
+                "id": 9,
+
+                "region": "KC"
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        "id": 6,
+
+        "firstName": "Dhanesh",
+
+        "lastName": "Balaji",
+
+        "email": "dhaneshBalaji@psiog.com",
+
+        "lastLogin": "2022-11-24T14:10:29.427",
+
+        "isActive": true,
+
+        "isCurrentUser": false,
+
+        "type": [
+
+            {
+
+                "id": 5,
+
+                "type": "Spire"
+
+            }
+
+        ],
+
+        "role": [
+
+            {
+
+                "id": 8,
+
+                "role": "Supervisor"
+
+            }
+
+        ],
+
+        "region": [
+
+            {
+
+                "id": 9,
+
+                "region": "KC"
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        "id": 8,
+
+        "firstName": "Vijay",
+
+        "lastName": "Pradeesh",
+
+        "email": "Vijay@psiog.com",
+
+        "lastLogin": "2022-11-24T14:16:50.9",
+
+        "isActive": true,
+
+        "isCurrentUser": true,
+
+        "type": [
+
+            {
+
+                "id": 4,
+
+                "type": "Mears"
+
+            }
+
+        ],
+
+        "role": [
+
+            {
+
+                "id": 6,
+
+                "role": "Admin"
+
+            }
+
+        ],
+
+        "region": [
+
+            {
+
+                "id": 9,
+
+                "region": "KC"
+
+            }
+
+        ]
+
+    }
+
+]

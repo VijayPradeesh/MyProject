@@ -1,0 +1,88 @@
+﻿<div>
+    <h4>Labor Details by Pay Item</h4>
+    <table class="firstDiv" style="border:solid 0px black;repeat-header:yes;repeat-footer:yes;">
+        <thead>
+            <tr>
+                <th style="width:30%">Employee</th>
+                <th style="width:20%;">Pay Item</th>
+                <th style="width:10%;">Town</th>
+                <th style="width:10%;">ST Hours</th>
+                <th style="width:10%;">OT Hours</th>
+                <th style="width:10%;">DT Hours</th>
+                <th style="width:10%;">Total Hrs</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var labor in @Model.LaborActivity)
+                {
+                    var laborrowcount = true;
+                    @*<tr>
+                        <td colspan="6" style="text-align: left;">
+                            <strong>@labor.EmployeeName</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width:20%;">Pay Item</th>
+                        <th style="width:30%;">Town</th>
+                        <th style="width:10%;">ST Hours</th>
+                        <th style="width:10%;">OT Hours</th>
+                        <th style="width:10%;">DT Hours</th>
+                        <th style="width:10%;">Total Hrs</th>
+                    </tr>*@
+                    foreach (var payitem in @labor.HoursByPayItem)
+                    {
+                        <tr>
+                            @if (laborrowcount)
+                            {
+                                laborrowcount = false;
+                                <td rowspan="@labor.PayItemCount">
+                                    @labor.EmployeeName
+                                </td>
+                            }
+                            <td>@payitem.PayItem</td>
+                            <td>@payitem.Town</td>
+                            <td>@payitem.StandardHours</td>
+                            <td>@payitem.OvertimeHours</td>
+                            <td>@payitem.DoubleTimeHours</td>
+                            <td>@payitem.TotalHours</td>
+                        </tr>
+
+                    }
+                }
+            }
+        </tbody>
+        <tbody>
+            @*@{
+                foreach (var labor in @Model.LaborActivity)
+                {
+                    <tr>
+                        <td colspan="6" style="text-align: left;">
+                            <strong>@labor.EmployeeName</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width:20%;">Pay Item</th>
+                        <th style="width:30%;">Town</th>
+                        <th style="width:10%;">ST Hours</th>
+                        <th style="width:10%;">OT Hours</th>
+                        <th style="width:10%;">DT Hours</th>
+                        <th style="width:10%;">Total Hrs</th>
+                    </tr>
+                        foreach (var payitem in @labor.HoursByPayItem)
+                        {
+                            <tr>
+                                <td>@payitem.PayItem</td>
+                                <td>@payitem.Town</td>
+                                <td>@payitem.StandardHours</td>
+                                <td>@payitem.OvertimeHours</td>
+                                <td>@payitem.DoubleTimeHours</td>
+                                <td>@payitem.TotalHours</td>
+                            </tr>
+
+                        }
+                }
+            }*@
+        </tbody>
+    </table>
+</div>
