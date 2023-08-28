@@ -1,0 +1,1233 @@
+{
+	"info": {
+		"_postman_id": "a2dea4d2-bb00-459c-b2b4-9da59ea4a95e",
+		"name": "Customer_Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21755107"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "ResetPassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Ill1dnJhai5TaW5naCIsIlJvbGUiOiIiLCJVc2VySWQiOiI3IiwiSXNBZG1pbiI6IkZhbHNlIiwiZXhwIjoxNjY5MjkyMzY2LCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.sLeZhfzOgo2lTQstJ3vaD48zq5sJ43lL8t8Hml4bceJIkf4iISBGBEDUb3OFJ8hjm-52AfJK-Aj80cPKRP_ccg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"requestedUserId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Auth/ResetPassword",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Auth",
+								"ResetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkRoYW5lc2guQmFsYWppIiwiUm9sZSI6IlN1cGVydmlzb3IiLCJVc2VySWQiOiI2IiwiSXNBZG1pbiI6IkZhbHNlIiwiZXhwIjoxNjY5NzA3Mzg1LCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.M5pIkk7yHVSr4CCIxPXkx3FXr9ajpLMMLthnAewGgGMmLH5he3D0X80IDaSiGaGsfCFfxsHMNm4CecK-tGnhCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"adminId\": 0,\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"email\": \"user@example.com\",\r\n  \"roleId\": 0,\r\n  \"organisationId\": 0,\r\n  \"region\": [\r\n    {\r\n      \"id\": 0,\r\n      \"regionType\": \"string\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Auth/register",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IlZpamF5LlByYWRlZXNoIiwiUm9sZSI6IiIsIlVzZXJJZCI6IjgiLCJJc0FkbWluIjoiRmFsc2UiLCJleHAiOjE2NjkzNjU4NjcsImlzcyI6IkN1c3RvbWVyUG9ydGFsIiwiYXVkIjoiQ3VzdG9tZXJQb3J0YWxDbGllbnQifQ.Codx8WESrYeSU3yxXHU_Xx2Vpt0tWWdCTN4L2mmbq3YTKVq1kXVa59-BSGzJQaJHaxzWl_anbaFt_sv0fcimpg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"email\": \"string\",\r\n  \"newPassword\": \"string\",\r\n  \"confirmNewPassword\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Auth/ResetAccount",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Auth",
+								"ResetAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Auth/login",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Configurations",
+			"item": [
+				{
+					"name": "Get All Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/GetAllOrganisations?flag=true",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"GetAllOrganisations"
+							],
+							"query": [
+								{
+									"key": "flag",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Contracts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/GetAllContracts/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"GetAllContracts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Regions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"contract\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/GetAllRegions",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"GetAllRegions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/GetRoles/4",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"GetRoles",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New in Look Up",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"value\": \"string\",\r\n  \"flag\": \"string\",\r\n  \"type\": \"string\",\r\n  \"description\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/AddNew",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"AddNew"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Screens",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"organizationId\": 0,\r\n  \"roleId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/GetAllScreens",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"GetAllScreens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Contract",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"customerId\": 0,\r\n  \"contractNumber\": \"string\",\r\n  \"isChecked\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/PostContract",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"PostContract"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Region",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"customerId\": 0,\r\n  \"contract\": \"string\",\r\n  \"regionId\": 0,\r\n  \"isChecked\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/PostRegion",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"PostRegion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"customerId\": 0,\r\n  \"roleId\": 0,\r\n  \"isChecked\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/PostRole",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"PostRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Screen",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"customerId\": 0,\r\n  \"roleId\": 0,\r\n  \"isChecked\": true,\r\n  \"screenId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/Configurations/PostScreen",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"Configurations",
+								"PostScreen"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Activity",
+			"item": [
+				{
+					"name": "Get View Approval",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/JobActivity/GetViewApproval?Id=2&flag=true",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"JobActivity",
+								"GetViewApproval"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "2"
+								},
+								{
+									"key": "flag",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IlN0YW5sZXkuU0wiLCJSb2xlIjoiQWRtaW4iLCJFbWFpbCI6InN0YW5sZXlzdGV2ZW5zb25AcHNpb2cuY29tIiwiVXNlcklkIjoiMTAwNjMiLCJJc0FkbWluIjoiVHJ1ZSIsIk9yZ2FuaXphdGlvbiI6Ik1lYXJzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE2ODUxODM3MjQsImlzcyI6IkN1c3RvbWVyUG9ydGFsIiwiYXVkIjoiQ3VzdG9tZXJQb3J0YWxDbGllbnQifQ.NimH9pJgHthoy4UdAPS8IpKjmRYC4M6-H4erJDFGCEdFPsKqixHCQqKd76z9Vo45sDS3AsEJfc0ocC1R-uhcVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"foremanName\": \"string\",\r\n  \"jobNumber\": \"string\",\r\n  \"status\": \"string\",\r\n  \"currentWeek\": true,\r\n  \"wo\": \"string\",\r\n  \"po\": \"string\",\r\n  \"isResurfacing\": true,\r\n  \"contractNumber\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/JobActivity/GetAllJobs",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"JobActivity",
+								"GetAllJobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Job Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiS2FydGhpY2siLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJTcGlyZS1BZG1pbiIsIlVzZXJJZCI6IjUiLCJleHAiOjE2Njg2OTMwNzAsImlzcyI6IkN1c3RvbWVyUG9ydGFsIiwiYXVkIjoiQ3VzdG9tZXJQb3J0YWxDbGllbnQifQ.8Nkh_knIkoC8zCtvMOSD8l_3g4wBN399yupUZKEZcVAGfC8WohzyHFbQxTGSRVyOMGPIG2_ZMUm0BsSfj80CJA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jobId\": 0,\r\n  \"userId\": 0,\r\n  \"status\": \"string\",\r\n  \"comments\": \"string\",\r\n  \"reasonRejectionId\": 0,\r\n  \"ipAddress\": \"string\",\r\n  \"signature\": \"string\",\r\n  \"requester\": \"string\",\r\n  \"isResurfacing\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/JobActivity/PostJobStatus",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"JobActivity",
+								"PostJobStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IlNwaXJlLkFkbWluIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJzcGlyZS5hZG1pbkBzcGlyZS5jb20iLCJVc2VySWQiOiIyMDA2NyIsIklzQWRtaW4iOiJUcnVlIiwiT3JnYW5pemF0aW9uIjoiU3BpcmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTY4NTQyOTMyMCwiaXNzIjoiQ3VzdG9tZXJQb3J0YWwiLCJhdWQiOiJDdXN0b21lclBvcnRhbENsaWVudCJ9.ZeDR8fTEpPBaSYKKrrIarmAiWH4hd4aMgWR0DTLkgKz93_BcnU7PvKuQ761Spec32dmCENKjlGssGovCV0UGqA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/JobActivity/GetJobStatus/1/true",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"JobActivity",
+								"GetJobStatus",
+								"1",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IlNwaXJlLkFkbWluIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJzcGlyZS5hZG1pbkBzcGlyZS5jb20iLCJVc2VySWQiOiIyMDA2NyIsIklzQWRtaW4iOiJUcnVlIiwiT3JnYW5pemF0aW9uIjoiU3BpcmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTY4NjczMDAyOCwiaXNzIjoiQ3VzdG9tZXJQb3J0YWwiLCJhdWQiOiJDdXN0b21lclBvcnRhbENsaWVudCJ9.vRDzEljcl_v1W3PnPo4cH9EjPQkD_K7kKjwpyyHg5Jr69VMUpEOBP0bDafvYsetWfVDx7WbTYoQ1-Msq9r99ZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/JobActivity/GetJobDetails/1/true",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"JobActivity",
+								"GetJobDetails",
+								"1",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Resurfacing Images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/JobActivity/GetResurfacingImages?Id=1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"JobActivity",
+								"GetResurfacingImages"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rejection Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/JobActivity/GetRejectionStatus",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"JobActivity",
+								"GetRejectionStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LookUp",
+			"item": [
+				{
+					"name": "Get Types",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Ill1dnJhai5TaW5naCIsIlJvbGUiOiIiLCJVc2VySWQiOiI3IiwiSXNBZG1pbiI6IkZhbHNlIiwiZXhwIjoxNjY5MjkyMzY2LCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.sLeZhfzOgo2lTQstJ3vaD48zq5sJ43lL8t8Hml4bceJIkf4iISBGBEDUb3OFJ8hjm-52AfJK-Aj80cPKRP_ccg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/LookUp/GetTypes",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"LookUp",
+								"GetTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkRoYW5lc2guQmFsYWppIiwiUm9sZSI6IiIsIlVzZXJJZCI6IjYiLCJJc0FkbWluIjoiRmFsc2UiLCJleHAiOjE2Njk5ODkxODIsImlzcyI6IkN1c3RvbWVyUG9ydGFsIiwiYXVkIjoiQ3VzdG9tZXJQb3J0YWxDbGllbnQifQ.U9drKc9FDS95IDduoM--Wv3M01oomaaT_ZjltGRxBDuu1is-IdCWjGmt2JMWV73MHsLl2sLim0IrwxZ2A_WpeA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"searchKey\": \"string\",\r\n  \"roleId\": 0,\r\n  \"regionId\": 0,\r\n  \"typeId\": 0,\r\n  \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/LookUp/GetUsers",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"LookUp",
+								"GetUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW5AcHNpb2cuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiTWVhcnMtQWRtaW4iLCJVc2VySWQiOiIxMSIsImV4cCI6MTY2OTExNTk3MSwiaXNzIjoiQ3VzdG9tZXJQb3J0YWwiLCJhdWQiOiJDdXN0b21lclBvcnRhbENsaWVudCJ9.QNppkm3y5UnQfqK1eB1M5p0CHnXvkRzx6B2EY1KmniJMBl25NRDoZcXMHcACAvXjtenxzJoP4sxTL0FJIRRsxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/LookUp/GetModuleRoles/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"LookUp",
+								"GetModuleRoles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Regions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Ill1dnJhai5TaW5naCIsIlJvbGUiOiIiLCJVc2VySWQiOiI3IiwiSXNBZG1pbiI6IkZhbHNlIiwiZXhwIjoxNjY5MjkyMzY2LCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.sLeZhfzOgo2lTQstJ3vaD48zq5sJ43lL8t8Hml4bceJIkf4iISBGBEDUb3OFJ8hjm-52AfJK-Aj80cPKRP_ccg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/LookUp/GetRegions",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"LookUp",
+								"GetRegions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkRoYW5lc2guQmFsYWppIiwiUm9sZSI6IiIsIlVzZXJJZCI6IjYiLCJJc0FkbWluIjoiRmFsc2UiLCJleHAiOjE2NjkzNzcwMDgsImlzcyI6IkN1c3RvbWVyUG9ydGFsIiwiYXVkIjoiQ3VzdG9tZXJQb3J0YWxDbGllbnQifQ.D_qb3TIDwvypH7vqVUG5BFDQ514L_aaxqHNk6c090hZnSriIjzG3TLyAyg7Rtajkpcqgtx9p9ZFFQ0XsMEl-UA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/LookUp/Roles",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"LookUp",
+								"Roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Drop Down Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkRoYW5lc2guQmFsYWppIiwiUm9sZSI6IlN1cGVydmlzb3IiLCJVc2VySWQiOiI2IiwiSXNBZG1pbiI6IkZhbHNlIiwiZXhwIjoxNjY5Nzk3Nzg0LCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.-VaeqFV0BbEMz590DpglMCBudpA6CMpgNBCg5OmyOF7TBPSrWCms_k4b2OWL3GdTXTZXnTihawYGZL_A9KyUkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/LookUp/GetDropDownData",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"LookUp",
+								"GetDropDownData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Im1rLjEyMyIsIlJvbGUiOiJOZXcgUm9sZSIsIkVtYWlsIjoibWsxMjNAYWRtaW4uY29tIiwiVXNlcklkIjoiNDAxMTYiLCJJc0FkbWluIjoiRmFsc2UiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik5ldyBSb2xlIiwiZXhwIjoxNjg4NjI5NTIxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0._m3EAeteKE14v63R3bj0Gigi-RLFJ7p0f4bmF0sZAEGJPT5JpvZcDHxjMi6Orngj_YNIcT2rRgxbgI5LnufnpA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/LookUp/GetUser",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"LookUp",
+								"GetUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Generate Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"fromDate\": \"2023-08-03T03:47:16.132Z\",\r\n  \"toDate\": \"2023-08-03T03:47:16.132Z\",\r\n  \"workOrder\": [\r\n    \"string\"\r\n  ],\r\n  \"foreman\": [\r\n    \"string\"\r\n  ],\r\n  \"contractNumber\": \"string\",\r\n  \"dfrStatus\": \"string\",\r\n  \"download\": true,\r\n  \"companyId\": 0,\r\n  \"isResurfacing\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/CustomerPortal/Reports/GenerateReport",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"CustomerPortal",
+								"Reports",
+								"GenerateReport"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutorials",
+			"item": [
+				{
+					"name": "Play or download file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/StaticFiles/Mears/Videos/User Access Screen - Demo.mp4",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"StaticFiles",
+								"Mears",
+								"Videos",
+								"User Access Screen - Demo.mp4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Files",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IlN0YW5sZXkuU0wiLCJSb2xlIjoiQWRtaW4iLCJFbWFpbCI6InN0YW5sZXlzdGV2ZW5zb25AcHNpb2cuY29tIiwiVXNlcklkIjoiMTAwNjMiLCJJc0FkbWluIjoiVHJ1ZSIsIk9yZ2FuaXphdGlvbiI6Ik1lYXJzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE2ODc4Mzk5ODEsImlzcyI6IkN1c3RvbWVyUG9ydGFsIiwiYXVkIjoiQ3VzdG9tZXJQb3J0YWxDbGllbnQifQ.CZPJnY-hHg5s6-buSyIyKuiSIVVMkCyn-y3TvH6Jab95N7NfmU2EM8BW5xKl7sBtiDh-i9_gYilTN8MYYP4oAw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 0,\r\n  \"company\": \"string\",\r\n  \"folder\": \"string\",\r\n  \"flag\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/CustomerPortal/Tutorials/GetFiles",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"CustomerPortal",
+								"Tutorials",
+								"GetFiles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Forgot Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/User/ForgotPassword",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"User",
+								"ForgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkRoYW5lc2guQmFsYWppIiwiUm9sZSI6IiIsIlVzZXJJZCI6IjYiLCJJc0FkbWluIjoiRmFsc2UiLCJleHAiOjE2NjkzNzcwMDgsImlzcyI6IkN1c3RvbWVyUG9ydGFsIiwiYXVkIjoiQ3VzdG9tZXJQb3J0YWxDbGllbnQifQ.D_qb3TIDwvypH7vqVUG5BFDQ514L_aaxqHNk6c090hZnSriIjzG3TLyAyg7Rtajkpcqgtx9p9ZFFQ0XsMEl-UA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"adminId\": 0,\r\n  \"userId\": 0,\r\n  \"email\": \"string\",\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"typeId\": 0,\r\n  \"region\": [\r\n    {\r\n      \"id\": 0,\r\n      \"regionType\": \"string\"\r\n    }\r\n  ],\r\n  \"roleId\": 0,\r\n  \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/User/EditUser",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"User",
+								"EditUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkFkbWluLk1lYXJzIiwiUm9sZSI6IkFkbWluIiwiRW1haWwiOiJhZG1pbkBtZWFycy5jb20iLCJVc2VySWQiOiIyIiwiSXNBZG1pbiI6IlRydWUiLCJPcmdhbml6YXRpb24iOiJNZWFycyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg4ODA2MTMxLCJpc3MiOiJDdXN0b21lclBvcnRhbCIsImF1ZCI6IkN1c3RvbWVyUG9ydGFsQ2xpZW50In0.Nj09H8N5JXaq86SwHay5FRRYWsjb8d87XaJXAR0VliSHX-tlvcSgGHOGYYd2cLmeC2xpDanICMVN0qszKt9kDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"signature\": \"string\",\r\n  \"flag\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/customerPortal/User/EditProfile",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"customerPortal",
+								"User",
+								"EditProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/WeatherForecast",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

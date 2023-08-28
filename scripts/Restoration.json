@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "646b4794d2556aa775f1bccb"
+  },
+  "surfacesRestoredData": [
+    {
+      "originalLength": 2.25,
+      "originalWidth": 4.41,
+      "originalDepth": 2.25,
+      "originalDiameter": null,
+      "originalLengthFeet": "2",
+      "originalLengthInches": "3",
+      "originalWidthFeet": "4",
+      "originalWidthInches": "5",
+      "originalDepthFeet": "2",
+      "originalDepthInches": "3",
+      "originalDiameterFeet": null,
+      "originalDiameterInches": null,
+      "originalTotal": 0.83,
+      "restoredLength": 0,
+      "restoredWidth": 0,
+      "restoredDepth": 0,
+      "restoredDiameter": null,
+      "restoredLengthFeet": "0",
+      "restoredLengthInches": "0",
+      "restoredWidthFeet": "0",
+      "restoredWidthInches": "0",
+      "restoredDepthFeet": "0",
+      "restoredDepthInches": "0",
+      "restoredDiameterFeet": null,
+      "restoredDiameterInches": null,
+      "restoredTotal": 0,
+      "isCompleted": false,
+      "originalCount": 0,
+      "originalType": "",
+      "restoredCount": null,
+      "restoredType": null,
+      "createdOn": "2023-04-13T08:30:50.06",
+      "modifiedOn": null,
+      "isActive": true,
+      "surfaceTypeName": "Street",
+      "materialTypeName": "Asphalt",
+      "created": "2023-05-22T13:30:35.0522222+05:30",
+      "createdBy": 238,
+      "modified": "2023-05-22T13:30:35.0522222+05:30",
+      "modifiedBy": 43
+    }
+  ],
+  "addMaterialData": [
+    {
+      "quantity": 2,
+      "createdOn": "2023-04-13T08:31:24.43",
+      "modifiedOn": null,
+      "isActive": true,
+      "addMaterialName": "Dye Coloring",
+      "created": "2023-05-22T13:30:35.0522222+05:30",
+      "createdBy": 238,
+      "modified": "2023-05-22T13:30:35.0522222+05:30",
+      "modifiedBy": 43
+    }
+  ],
+  "weatherConditions": "Test Comments",
+  "workOrderNumber": "111111-11111111",
+  "purchaseOrderNumber": null,
+  "restorationOrderNumber": null,
+  "streetAddress": "123",
+  "cityCode": "KANSAS CITY",
+  "stateCode": "KS",
+  "trafficControl": false,
+  "customerComplaint": false,
+  "backlogWorkDate": "2023-04-13T11:00:00"
+}]

@@ -1,0 +1,28 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [DFR_ID]
+      ,[DFR_NAME]
+      ,[ISACTIVE]
+      ,[UNIQUE_KEY]
+  FROM [CrewLink.Prod.Latest].[dbo].[CL_DFR_MASTER_T]
+
+  insert into [CrewLink.Prod.Latest].[dbo].[CL_DFR_MASTER_T]
+  values('TECO Miami T&E DFR', 1, 'TM TE DFR')
+
+  update [CrewLink.Prod.Latest].[dbo].[CL_DFR_MASTER_T]
+  set UNIQUE_KEY = 'TM TE DFR' 
+  where DFR_ID = 29
+
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [DFR_MAPPING_ID]
+      ,[WI_CONTRACT_ID]
+      ,[DFR_ID]
+      ,[CREATED_ON]
+      ,[CREATED_BY]
+      ,[MODIFIED_ON]
+      ,[MODIFIED_BY]
+      ,[ISACTIVE]
+  FROM [CrewLink.Prod.Latest].[dbo].[CL_DFR_MAPPING_T]
+
+  insert into [CrewLink.Prod.Latest].[dbo].[CL_DFR_MAPPING_T]
+  values(217,29,null,null,null,null,1)

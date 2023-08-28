@@ -1,0 +1,709 @@
+/****** Object:  Table #blackHills_temp    Script Date: 21-12-2021 20:10:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF OBJECT_ID('tempdb..#blackHills_temp') IS NOT NULL 
+BEGIN
+ DROP TABLE #blackHills_temp
+END
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CL_BLACK_HILLS_DISTRICT_T]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[CL_BLACK_HILLS_DISTRICT_T](
+	[BH_DISTRICT_ID] [int] IDENTITY(1,1) NOT NULL,
+	[DISTRICT_CODE] [int] NULL,
+	[CITY] [nvarchar](25) NULL,
+ CONSTRAINT [PK_CL_BLACK_HILLS_DISTRICT_T] PRIMARY KEY CLUSTERED 
+(
+	[BH_DISTRICT_ID] ASC 
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+CREATE TABLE #blackHills_temp (
+	[BH_DISTRICT_ID] [int] IDENTITY(1,1) NOT NULL,
+	[DISTRICT_CODE] [int] NULL,
+	[CITY] [nvarchar](25) NULL)
+GO
+SET IDENTITY_INSERT #blackHills_temp ON 
+
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (1, 4301, N'Fort Robinson
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (2, 4301, N'Crawford
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (3, 4301, N'Chadron
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (4, 4301, N'Parkview Terrace
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (5, 4301, N'Job Corp
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (6, 4301, N'Hay Springs
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (7, 4301, N'Rushville
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (8, 4301, N'Clinton
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (9, 4301, N'Gordon
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (10, 4301, N'Hemingford
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (11, 4301, N'Alliance
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (12, 4301, N'Bayard
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (13, 4301, N'Northport
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (14, 4301, N'Bridgeport
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (15, 4310, N'Henry
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (16, 4310, N'Lyman')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (17, 4310, N'Morrill')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (18, 4310, N'Mitchell')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (19, 4310, N'Terrytown')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (20, 4310, N'Scottsbluff')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (21, 4310, N'Gering')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (22, 4310, N'Minatare')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (23, 4311, N'Kimball
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (24, 4311, N'Potter
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (25, 4311, N'Sidney
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (26, 4311, N'Sidney Tech Center
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (27, 4311, N'Gurley
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (28, 4311, N'Dalton
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (29, 4311, N'Lodgepole
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (30, 4311, N'Chappell
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (31, 4311, N'Broadwater
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (32, 4311, N'Lisco
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (33, 4311, N'Oshkosh
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (34, 4311, N'Lewellen
+')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (35, 4307, N'Big Springs')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (36, 4307, N'Brule')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (37, 4307, N'Ogallala')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (38, 4307, N'Roscoe')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (39, 4307, N'Paxton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (40, 4307, N'Sutherland')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (41, 4307, N'Hershey')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (42, 4307, N'Grant')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (43, 4307, N'Venango')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (44, 4307, N'Imperial')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (45, 4307, N'Champion')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (46, 4307, N'Enders')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (47, 4307, N'Benkelman')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (48, 4307, N'McCook')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (49, 4307, N'Indianola')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (50, 4307, N'Bartley')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (51, 4307, N'Cambridge')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (52, 4307, N'Dandbury')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (53, 4305, N'Maxwell')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (54, 4305, N'Brady')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (55, 4305, N'Gothenburg')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (56, 4305, N'Willow Island')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (57, 4305, N'Cozad')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (58, 4305, N'Darr')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (59, 4305, N'Curtis')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (60, 4305, N'Moorefield')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (61, 4305, N'Farnam')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (62, 4305, N'Eustis')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (63, 4305, N'Elwood')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (64, 4305, N'Bertrand')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (65, 4305, N'Lexington')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (66, 4305, N'Johnson Lake')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (67, 4305, N'Overton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (68, 4305, N'Elm Creek')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (69, 4305, N'Odessa')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (70, 4305, N'Kearney')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (71, 4305, N'Amherst')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (72, 4305, N'Riverdale')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (73, 4305, N'Gibbon')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (74, 4305, N'Shelton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (75, 4305, N'Wood River')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (76, 4305, N'Pleasanton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (77, 4305, N'Ravenna')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (78, 4305, N'Cairo')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (79, 4305, N'Dannebrog')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (80, 4305, N'St. Paul')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (81, 4305, N'Palmer')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (82, 4305, N'Archer')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (83, 4305, N'Hazard')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (84, 4305, N'Litchfield')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (85, 4305, N'Loup City')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (86, 4305, N'Mason City')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (87, 4305, N'Ansley')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (88, 4305, N'Berwyn')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (89, 4305, N'Broken Bow')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (90, 4305, N'Arcadia')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (91, 4305, N'Comstock')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (92, 4305, N'Sargent')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (93, 4305, N'Burwell')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (94, 4305, N'Elyria')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (95, 4305, N'Ord')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (96, 4305, N'North Loup')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (97, 4305, N'Scotia')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (98, 4305, N'Greeley Center')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (99, 4304, N'Holbrook')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (100, 4304, N'Arapahoe')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (101, 4304, N'Edison')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (102, 4304, N'Beaver City')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (103, 4304, N'Oxford')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (104, 4304, N'Stamford')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (105, 4304, N'Orleans')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (106, 4304, N'North Shore')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (107, 4304, N'Republican City')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (108, 4304, N'Taylor''s Manor')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (109, 4304, N'Naponee')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (110, 4304, N'Bloomington')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (111, 4304, N'Franklin')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (112, 4304, N'Riverton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (113, 4304, N'Huntley')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (114, 4304, N'Loomis')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (115, 4304, N'Atlanta')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (116, 4304, N'Holdrege')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (117, 4304, N'Funk')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (118, 4304, N'Axtell')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (119, 4304, N'Ragan')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (120, 4304, N'Wilcox')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (121, 4304, N'Hildreth')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (122, 4304, N'Upland')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (123, 4304, N'Minden')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (124, 4304, N'Campbell')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (125, 4304, N'Heartwell')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (126, 4312, N'Inavale')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (127, 4312, N'Red Cloud')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (128, 4312, N'Guide Rock')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (129, 4312, N'Cowles')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (130, 4312, N'Bladen')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (131, 4312, N'Blue Hill')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (132, 4312, N'Rosemont')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (133, 4312, N'Lawrence')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (134, 4312, N'Holstein')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (135, 4312, N'Roseland')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (136, 4312, N'Assumption')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (137, 4312, N'Glenvil')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (138, 4312, N'Harvard')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (139, 4312, N'Clay Center')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (140, 4312, N'Saronville')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (141, 4312, N'Sutton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (142, 4312, N'Fairfield')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (143, 4312, N'Edgar')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (144, 4312, N'Nelson')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (145, 4312, N'Shickley')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (146, 4312, N'Davenport')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (147, 4312, N'Deshler')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (148, 4312, N'Ruskin')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (149, 4312, N'Hebron')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (150, 4312, N'Byron')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (151, 4312, N'Chester')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (152, 4313, N'Denman')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (153, 4313, N'Kenesaw')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (154, 4313, N'Juniata')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (155, 4313, N'Westbrook Park')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (156, 4313, N'Idlewilde')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (157, 4313, N'Hansen')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (158, 4313, N'Amick Acres')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (159, 4313, N'Doniphan')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (160, 4313, N'Giltner')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (161, 4313, N'Phillips')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (162, 4313, N'Chapman')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (163, 4313, N'Marquette')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (164, 4313, N'Aurora')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (165, 4313, N'Hampton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (166, 4313, N'Bradshaw')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (167, 4313, N'Henderson')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (168, 4313, N'York')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (169, 4313, N'Waco')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (170, 4313, N'Polk')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (171, 4313, N'Benedict')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (172, 4313, N'Utica')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (173, 4313, N'Tamora')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (174, 4313, N'Ulysses')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (175, 4313, N'Bee')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (176, 4313, N'Staplehurst')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (177, 4313, N'Seward')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (178, 4313, N'Milford')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (179, 4313, N'Grafton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (180, 4313, N'Exeter')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (181, 4313, N'Fairmont')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (182, 4313, N'Burres')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (183, 4313, N'Geneva')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (184, 4313, N'Milligan')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (185, 4313, N'Western')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (186, 4300, N'Ainsworth')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (187, 4300, N'Long Pine')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (188, 4300, N'Bassett')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (189, 4300, N'Newport')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (190, 4300, N'Atkinson')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (191, 4300, N'Emmet')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (192, 4300, N'O''Neill')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (193, 4300, N'Inman')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (194, 4300, N'Ewing')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (195, 4300, N'Orchard')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (196, 4300, N'Creighton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (197, 4300, N'Plainview')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (198, 4300, N'Foster')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (199, 4300, N'Osmond')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (200, 4300, N'Wausa')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (201, 4300, N'Bloomfield')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (202, 4300, N'Crofton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (203, 4300, N'Hartington')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (204, 4300, N'Coleridge')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (205, 4300, N'Laurel')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (206, 4300, N'Belden')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (207, 4300, N'Randolph')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (208, 4300, N'Clearwater')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (209, 4300, N'Neligh')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (210, 4300, N'Oakdale')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (211, 4300, N'Elgin')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (212, 4300, N'Raeville')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (213, 4300, N'Petersburg')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (214, 4300, N'Newman Grove')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (215, 4300, N'Albion')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (216, 4300, N'Lindsay')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (217, 4300, N'Humphrey')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (218, 4300, N'Spalding')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (219, 4300, N'Primrose')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (220, 4300, N'Cedar Rapids')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (221, 4300, N'St. Edward')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (222, 4300, N'Belgrade')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (223, 4300, N'Genoa')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (224, 4300, N'Fullerton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (225, 4308, N'Tilden')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (226, 4308, N'Meadow Grove')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (227, 4308, N'Battle Creek')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (228, 4308, N'Norfolk')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (229, 4308, N'Madison')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (230, 4308, N'Stanton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (231, 4308, N'Winside')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (232, 4308, N'Pilger')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (233, 4308, N'Beemer')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (234, 4308, N'Wisner')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (235, 4308, N'West Point')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (236, 4308, N'Oakland')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (237, 4308, N'Bancroft')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (238, 4308, N'Rosalie')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (239, 4308, N'Walthill')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (240, 4308, N'Thurston')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (241, 4308, N'Winnebago')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (242, 4308, N'Homer')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (243, 4308, N'Jackson')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (244, 4308, N'Emerson')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (245, 4308, N'Wakefield')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (246, 4308, N'Wayne')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (247, 4303, N'Columbus')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (248, 4303, N'Schuyler')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (249, 4303, N'North Bend')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (250, 4303, N'David City')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (251, 4303, N'Garrison')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (252, 4303, N'Rising City')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (253, 4303, N'Shelby')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (254, 4303, N'Osceola')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (255, 4309, N'Tekamah')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (256, 4309, N'Craig')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (257, 4309, N'Uehling')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (258, 4309, N'Hooper')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (259, 4309, N'Nickerson')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (260, 4309, N'Fontanelle')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (261, 4309, N'Blair')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (262, 4309, N'Arlington')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (263, 4309, N'Fremont West')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (264, 4309, N'Wahoo')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (265, 4309, N'Mead')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (266, 4309, N'Ashland')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (267, 4309, N'Valley')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (268, 4309, N'Waterloo')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (269, 4309, N'Ralston')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (270, 4309, N'La Vista')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (271, 4309, N'Bellevue')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (272, 4309, N'Gretna')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (273, 4309, N'Louisville')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (274, 4309, N'Murdock')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (275, 4309, N'Manley')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (276, 4309, N'Elmwood')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (277, 4309, N'Avoca')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (278, 4309, N'Weeping Water')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (279, 4309, N'Murray')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (280, 4309, N'Mynard')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (281, 4309, N'Buccaneer Bay')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (282, 4309, N'La Platte')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (283, 4309, N'Papillion')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (284, 4309, N'Plattsmouth')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (285, 4309, N'Offutt AFB')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (286, 4306, N'Waverly')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (287, 4306, N'Eagle')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (288, 4306, N'Lincoln')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (289, 4306, N'Walton')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (290, 4306, N'Cheney')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (291, 4306, N'Woodland Hills')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (292, 4306, N'Greenwood')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (293, 4306, N'Palmyra')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (294, 4306, N'Bennet')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (295, 4306, N'Hickman')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (296, 4306, N'Panama')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (297, 4306, N'Holland')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (298, 4306, N'Firth')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (299, 4306, N'Adams')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (300, 4306, N'Cortland')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (301, 4306, N'Hallam')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (302, 4306, N'Clatonia')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (303, 4306, N'Wilber')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (304, 4306, N'Crete')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (305, 4306, N'Dorchester')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (306, 4306, N'Friend')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (307, 4302, N'De Witt')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (308, 4302, N'Plymouth')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (309, 4302, N'Beatrice')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (310, 4302, N'Fairbury')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (311, 4302, N'Endicott')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (312, 4302, N'Odell')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (313, 4302, N'Blue Springs')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (314, 4302, N'Wymore')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (315, 4302, N'Sterling')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (316, 4302, N'Tecumseh')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (317, 4302, N'Johnson')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (318, 4302, N'Peru')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (319, 4302, N'Auburn')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (320, 4302, N'Table Rock')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (321, 4302, N'Humboldt')
+GO
+INSERT #blackHills_temp ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY]) VALUES (322, 4302, N'Pawnee City')
+GO
+SET IDENTITY_INSERT #blackHills_temp OFF
+GO
+SET IDENTITY_INSERT [dbo].[CL_BLACK_HILLS_DISTRICT_T] ON
+GO
+insert into [dbo].[CL_BLACK_HILLS_DISTRICT_T] ([BH_DISTRICT_ID], [DISTRICT_CODE], [CITY])
+select [BH_DISTRICT_ID], [DISTRICT_CODE], [CITY] from #blackHills_temp
+where not exists (select CITY from [dbo].[CL_BLACK_HILLS_DISTRICT_T] as bhne where bhne.CITY = #blackHills_temp.CITY )
+SET IDENTITY_INSERT [dbo].[CL_BLACK_HILLS_DISTRICT_T] OFF
+GO
