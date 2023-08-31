@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>currency converter</title>
+    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+    <link rel="stylesheet" href="indexcc.css">
+</head>
+<body>
+<div id="block1" class="div" >
+    <div id="head"><h2   ><img src="curr.jpeg" alt="" style="width:25px;height:25px"> Currency Converter</h2></div>
+    <table style="margin:auto;text-align:center; position:relative; top:20%;">
+        <tr>
+            <td>
+                <input class="input" type="text" id="fr" style="" >
+
+            </td>
+            <td>
+                <select name="currencies" id="from" class="select" >
+                    <option value="AUD" >Australian Dollar (AUD)</option>
+                    <option value="BGN">Bulgarian Lev (BGN)</option>
+                    <option value="CAD">Canadian Dollar (CAD)</option>
+                    <option value="CHF">Swiss Franc (CHF)</option>
+                    <option value="DKK">Danish Krone (DKK)</option>
+                    <option value="GBP">Pound Sterling (GBP)</option>
+                    <option value="ILS">Israeli New Shekel (ILS)</option>
+                    <option value="INR" selected>Indian Rupee (INR)</option>
+                    <option value="JPY">Japanese Yen (JPY)</option>
+                    <option value="PHP">Philippine Peso (PHP)</option>
+                    <option value="RUB">Russian Ruble (RUB)</option>
+                    <option value="USD">US Dollar (USD)</option>
+                    <option value="AED">Arab Emirates Dirham (AED)</option>
+                </select>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <input class="input" type="text" id="to" >
+            </td>
+            <td>
+                <select name="currencies" id="tocur" class="select"  >
+                     <option value="AUD" selected>Australian Dollar (AUD)</option>
+                    <option value="BGN">Bulgarian Lev (BGN)</option>
+                    <option value="CAD">Canadian Dollar (CAD)</option>
+                    <option value="CHF">Swiss Franc (CHF)</option>
+                    <option value="DKK">Danish Krone (DKK)</option>
+                    <option value="GBP">Pound Sterling (GBP)</option>
+                    <option value="ILS">Israeli New Shekel (ILS)</option>
+                    <option value="INR">Indian Rupee (INR)</option>
+                    <option value="JPY">Japanese Yen (JPY)</option>
+                    <option value="PHP">Philippine Peso (PHP)</option>
+                    <option value="RUB">Russian Ruble (RUB)</option>
+                    <option value="USD">US Dollar (USD)</option>
+                    <option value="AED">Arab Emirates Dirham (AED)</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div id="div12"  >
+        <button id="button" class="btn" onclick="changecurrency()">Convert</button>
+    </div>
+</div>
+
+<script src="indexjs.js"></script>
+</body>
+</html>

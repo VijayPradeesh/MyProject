@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo7</title>
+</head>
+<body style="background:lightseagreen">
+<h1>Check whether the string consists only alphabets</h1>
+<label >Name</label>
+<input type="text" id="members">
+<br>
+<br>
+<button onclick="show()">Display</button>
+<br>
+
+<script>
+var j;
+
+
+function show()
+{
+    j = document.getElementById("members").value;
+    var b = true;
+    for(var i =0; i<j.length;i++)
+        {
+        if(j[i].match(/^[A-Za-z]+$/))
+        {
+            continue;
+        }
+        else
+        {
+        b=false;
+        }
+    }
+    if(b==true)
+    {
+        alert("valid");
+    }
+    else
+    {
+        alert("invalid");
+    }
+
+}
+</script>
+</body>
+</html>

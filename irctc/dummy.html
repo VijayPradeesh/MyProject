@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and Fly</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="irctc.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+</head>
+<body >
+<div class="row" >
+    <div>
+    <img src="taf.jpg" alt=""  class="three">
+   </div>
+    
+
+    <p class="five" id="navbar">
+        <button  id="logout" class="btn">Logout</button>
+       <!-- <button  class="btn">Theme</button>-->
+        <button  id="signup" class="btn">Register</button>
+        <button  id="login" class="btn">Login</button>
+        <button   class="btn" id="cancelBtn">Cancel Train</button>
+        <button   class="btn" id="tickets">My Tickets</button>
+    </p>
+    <img src="irctclog.jpeg" alt="" class="one" id="logoright">
+
+</div>
+<div class="row" id="bod">
+    <br>
+    <p class="one"></p>
+    <p class="three" id="box">
+        <span id="head1">Book<br></span>
+
+        <span id="head2">Your Tickets</span>
+        <br>
+        <i class="fa fa-train" aria-hidden="true" id="head3"></i>
+        <br><br>
+        <input type="text" placeholder="from*" id="from">
+        <br><br>
+        <input type="text" placeholder="to*" id="to">
+        <br><br>
+        <input type="date" id="dt">
+        <br><br>
+        <select name="trains" id="train">
+
+
+            <option value="ACount1">AC First Class</option>
+
+            <option value="ACount2">AC 2 Tier</option>
+
+
+            <option value="GCount">Second Sitting (2S)</option>
+        </select>
+        <br><br>
+        <button id="findTrain">Find Trains</button>
+        <br><br>
+
+            <a href="looloo.html">Confirm Payment</a> <br><br>
+        <a href="cancel.html">Cancel</a>
+    </p>
+    <p class="four"></p>
+    <p class="three" id="login-box">
+        <button style="" id="close1" >X</button>
+        <br><br><br>
+        <label>Email</label><br>
+        <input type="text" id="email"><br><br>
+        <label>Password</label><br>
+        <input type="password" id="password"><br><br>
+        <button id="signIn">Sign In</button>
+    </p>
+
+</div>
+<div >
+<p id="signupForm" style="margin:auto">
+    <button  id="close" >X</button>
+    <br><br>
+    <label>Email</label><br>
+    <input type="email" id="mail"><br><br>
+    <label>Password</label><br>
+    <input type="password" id="pass"><br><br>
+    <label>Name</label><br>
+    <input type="text" id="name"><br><br>
+    <label>Mobile Number</label><br>
+    <input type="number" id="number"><br><br>
+    <label>Gender</label><br>
+    <select name="" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br><br>
+    <label>date of birth</label><br>
+    <input type="date" id="dat"><br><br>
+    <button  id="submit">Submit</button>
+</p>
+
+    <p class="four" id="booking">
+            <button id="trclose">X</button>
+        <br>
+            <span id="span"></span>
+        <button id="bookTickets">Book Your Tickets</button>
+    </p>
+    <p class="three" id="bkPortal">
+         <button id="bkclose">X</button><br><br>
+        <label>Train Number</label><br>
+        <input type="number" id="bookingTrainNumber"><br><br>
+        <label>Seats</label><br>
+        <input type="number" id="seat">
+        <button id="bookNow">Book Now</button>
+    </p>
+    <p class="four" id="paymentWindow">
+        <button id="paymentClose">X</button>
+        <br><br>
+        <label>Payment Mode</label>
+        <select name="" id="payment">
+            <option value="debitcard">Debit</option>
+            <option value="creditcard">Credit</option>
+        </select>
+        <br><br>
+        <label>Card Number</label><br><br>
+        <input type="number" id="cardNo"><br><br>
+        <label>CVV</label><br><br>
+        <input type="number" id="cvv"><br><br>
+        <label>Expiry Date(day is not mandatory)</label><br><br>
+        <input type="date" id="expDate"><br><br><br>
+        <button id="pay">Pay</button>
+
+    </p>
+    <p class="four" id="ticket">
+        <button id="ticketClose" style="text-align:right" >X</button>
+        <br><br><br>
+        <span id="ticketInfo"></span>
+    </p>
+    <p class="five" id="myTickets">
+
+        <button id="closeTicket">X</button>
+        <br>
+
+        <label>Date</label><br><br>
+        <input type="date" id="da_te">
+        <br><br><br>
+        <button id="trainSearch">Search</button>
+    </p>
+    <p class="six" id="displayTickets">
+
+        <br>
+        <span id="ticketContent" style="text-align:center"></span>
+        <br>
+         <button id="tktClose">Close</button>
+        <br>
+</p>
+    <p class="five" id="cnclTrainDisplay">
+
+
+        <br>
+        <label>TrainId</label><br><br>
+        <input type="number" id="cnclTrainId"><br><br>
+        <label>Date</label><br><br>
+        <input type="date" id="cnclDate"><br><br>
+        <button id="cancelTrainSearch" style="background:Navy">Search</button>
+        <br><br>
+        <button id="cancelTrainClose" style="background:red">Close</button>
+    </p>
+</div>
+
+ <script type="text/javascript" src="irctc.js"></script>
+
+
+</body>
+</html>

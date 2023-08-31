@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo13-1</title>
+    <style>
+        .one
+        {
+        text-align:center;
+         width:100vw;
+        display:block;
+
+        background:yellow;
+        font-size:22px;
+
+        }
+        .two
+        {
+        text-align:center;
+        display:block:
+        border:2px solid yellow;
+        background:blue;
+        width:100vw;
+        font-size:22px;
+        }
+        .three
+        {
+        text-align:center;
+        width:100vw;
+        font-size:22px;
+        color:black;
+        background:green;
+        border:2px solid yellow;
+        }
+        .a
+        {
+            background:lightseagreen;
+        }
+        .b
+        {
+            background:yellow;
+        }
+        .c
+        {
+            background:orange;
+        }
+    </style>
+</head>
+<body id="bod" >
+<h1 id="psiog" style="font-size:22px">Psiog Digital</h1>
+<button onclick="func1()">Mode1</button>
+<button onclick="func2()">Mode2</button>
+<button onclick="func3()">Mode3</button>
+<script>
+    function func1()
+    {
+    document.getElementById("psiog").classList.remove("three");
+    document.getElementById("psiog").classList.remove("two");
+    document.getElementById("psiog").classList.add("one");
+    document.getElementById("bod").classList.add("a");
+    document.getElementById("bod").classList.remove("b");
+    }
+    function func2()
+    {
+    document.getElementById("psiog").classList.remove("three");
+    document.getElementById("psiog").classList.remove("one");
+    document.getElementById("psiog").classList.add("two");
+    document.getElementById("bod").classList.remove("a");
+    document.getElementById("bod").classList.add("b");
+    }
+    function func3()
+    {
+    document.getElementById("psiog").classList.remove("two");
+    document.getElementById("psiog").classList.remove("one");
+    document.getElementById("psiog").classList.add("three");
+    document.getElementById("bod").classList.remove("b");
+    document.getElementById("bod").classList.remove("a");
+    document.getElementById("bod").classList.add("c");
+    }
+</script>
+
+</body>
+</html>

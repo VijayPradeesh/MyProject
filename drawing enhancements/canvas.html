@@ -1,0 +1,112 @@
+<!doctypeHTML>
+<html>
+<head></head>
+<body>
+<div style="text-align:center">
+<canvas id="canvas" width="700px" height="500px" style="background:white;border:2px solid black;margin:auto;text-align:center;cursor:crosshair"></canvas>
+</div>
+
+</body>
+<script>
+var canvas;
+var ctx;
+var firstPointX;
+var firstPointY;
+var count = 0;
+var restore_array = [];
+var secondPointX ;
+var secondPointY;
+initialize();
+
+function initialize() {
+	
+	    canvas = document.getElementById("canvas");
+		ctx = canvas.getContext("2d");
+		canvas.addEventListener("click", drawLine);
+}
+function drawLine() {
+	// console.log("drawLine");
+	
+	canvas.removeEventListener("click",drawLine);
+	canvas.addEventListener("click",firstPoint);
+}
+function firstPoint() {
+	// console.log("firstpoint");
+	var bound = canvas.getBoundingClientRect();
+	firstPointX = event.clientX-bound.left;
+	firstPointY = event.clientY-bound.top;
+	
+	canvas.removeEventListener("click",firstPoint);
+	canvas.addEventListener("mousemove",Linedraw);
+}
+function Linedraw()
+{
+	count = count + 1;
+	var bound = canvas.getBoundingClientRect();
+	ctx.beginPath();
+	if(count == 1)
+	{
+		ctx.moveTo(firstPointX  ,firstPointY );
+	}
+	else
+	{
+		ctx.moveTo(firstPointX  , firstPointY);
+	}
+	
+	//console.log("linedraw");
+	ctx.lineTo((event.clientX-bound.left) ,firstPointY);
+	ctx.stroke();
+	// var x = ctx.putImageData(restore_array[count],0,0);
+	restore_array.push(ctx.getImageData(0,0,canvas.width,canvas.height));
+	//console.log(count);
+	
+	canvas.addEventListener("click",removeLine);
+}
+function removeLine()
+{
+	var bound = canvas.getBoundingClientRect();
+	
+	secondPointX = event.clientX-bound.left;
+	secondPointY = event.clientY-bound.top;
+	console.log(secondPointX);
+	//console.log("remove Line");
+	canvas.removeEventListener("mousemove",Linedraw);
+	canvas.addEventListener("mousemove",drawSecondLine)
+	
+}
+function drawSecondLine()
+{
+	canvas.removeEventListener("click",removeLine);
+	var bound = canvas.getBoundingClientRect();
+	ctx.beginPath();
+	ctx.moveTo(firstPointX  ,firstPointY );
+	
+	ctx.lineTo(firstPointX,(event.clientY-bound.top) )
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(secondPointX  ,firstPointY );
+	ctx.lineTo(secondPointX,(event.clientY-bound.top) )
+	ctx.stroke();
+	canvas.addEventListener("click", removeSecondLine);
+}
+function removeSecondLine()
+{
+	canvas.removeEventListener("mousemove",drawSecondLine);
+	var bound = canvas.getBoundingClientRect();
+	var x = event.clientX-bound.left;
+	var y = event.clientY-bound.top;
+	console.log(secondPointX);
+	canvas.removeEventListener("mousemove",drawSecondLine);
+	ctx.beginPath();
+	ctx.moveTo(firstPointX  ,y );
+	ctx.lineTo(secondPointX,y );
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(firstPointX  ,y );
+	ctx.lineTo(secondPointX, y);
+	ctx.stroke();
+	canvas.removeEventListener("mousemove",drawSecondLine);
+	canvas.removeEventListener("click", removeSecondLine);
+}
+</script>
+</html>

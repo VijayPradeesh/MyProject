@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background:lightseagreen">
+<h1>Case Conversion</h1>
+<label >Enter the string</label>
+<input type="text" id="strg"><br><br>
+<button onclick="con()">Convert</button>
+<script>
+function con()
+{
+var g = document.getElementById("strg").value;
+var UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lower = "abcdefghijklmnopqrstuvwxyz";
+var newarr=[];
+if(g)
+{
+for(var i=0;i<g.length;i++)
+    {
+    if(UPPER.indexOf(g[i])>=0)
+        {
+        newarr.push(g[i].toLowerCase());
+        }
+    else if(lower.indexOf(g[i]>=0))
+        {
+        newarr.push(g[i].toUpperCase());
+        }
+    else
+        {
+        newarr.push(g[i]);
+        }
+    }
+    document.getElementById("strg").value=newarr.join("");
+}
+else
+{
+    alert("invalid");
+}
+
+
+
+}
+
+</script>
+</body>
+</html>

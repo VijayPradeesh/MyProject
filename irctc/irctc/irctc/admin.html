@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="admin.css">
+   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+
+</head>
+<body >
+<div class="row" id="header">
+
+    <img src="irctclogo.jpeg" alt="" class="one" id="logoleft">
+      <p id="welcome" class="two"></p>
+    <span id="clock" class="two"></span>
+     <p class="one"></p>
+
+    <p class="five" id="navbar">
+        <button  id="logout" class="btn">Logout</button>
+        <!--<button  class="btn">Theme</button>-->
+
+        <button  id="login" class="btn">Login</button>
+        <!--<button   class="btn">Trains</button>-->
+
+    </p>
+    <img src="irctclog.jpeg" alt="" class="one" id="logoright">
+
+</div>
+<div class="row" id="bod">
+    <br>
+    <p class="one"></p>
+
+
+    <p class="three" id="login-box">
+        <button style="" id="close1" >X</button>
+        <br><br><br>
+        <label>Email</label><br>
+        <input type="text" id="email"><br><br>
+        <label>Password</label><br>
+        <input type="password" id="password"><br><br>
+        <button id="signIn">Sign In</button>
+    </p>
+    <div class="row" >
+    <p class="one"></p>
+    <p class="three" id="options">
+        <button id="updateTrain" class="opt">Update Train</button>
+        <br><br><br>
+        <button id="addTrain" class="opt">Add Train</button>
+        <br><br><br>
+        <button id="cancelTrain" class="opt">Cancel Train</button>
+    </p>
+    <div class="row">
+        <p class="four" id="adtrform">
+            <button  id="close">X</button>
+            <br>
+            <label style="padding-right:22px">Date</label>
+            <input type="date" id="dat"><br><br>
+            <label style="padding-right:22px" >Train id </label>
+            <input type="number" id="trainId"><br><br>
+            <label style="padding-right:38px">From</label>
+            <input type="text" id="from"><br><br>
+            <label style="padding-right:55px">To</label>
+            <input type="text" id="to"><br><br>
+            <label>Departure Time</label>
+            <input type="time" id="deptTime"><br><br>
+            <label style="padding-right:18px">Arrival Time </label>
+            <input type="time" id="arrivalTime"><br><br>
+            <label>Class 2A Count</label>
+            <input type="number" id="2aCount"><br><br>
+            <label style="padding-right:6px">Class 2A Price</label>
+            <input type="number" id="2aPrice"><br><br>
+            <label>Class 1A Count</label>
+            <input type="number" id="1aCount"><br><br>
+            <label>Class 1A Price</label>
+            <input type="number" id="1aPrice"><br><br>
+            <label>Class G Count</label>
+            <input type="number" id="gCount"><br><br>
+            <label>Class G Price</label>
+            <input type="number" id="gPrice"><br><br>
+            <button class="opt" id="submit">Submit</button>
+        </p>
+        <p class="four" id="Uadtrform">
+            <button  id="Uclose">X</button>
+            <br>
+            <label style="padding-right:22px">Date</label>
+            <input type="date" id="uDate"><br><br>
+            <label style="padding-right:22px" >Train id </label>
+            <input type="number" id="UtrainId"><br><br>
+            <label style="padding-right:38px" >From</label>
+            <input type="text"  id="Ufrom"><br><br>
+            <label style="padding-right:55px">To</label>
+            <input type="text" id="Uto"><br><br>
+            <label>Departure Time</label>
+            <input type="time" id="UdeptTime"><br><br>
+            <label style="padding-right:18px">Arrival Time </label>
+            <input type="time" id="UarrivalTime"><br><br>
+            <label>Class 2A Count</label>
+            <input type="number" id="U2aCount"><br><br>
+            <label style="padding-right:6px">Class 2A Price</label>
+            <input type="number" id="U2aPrice"><br><br>
+            <label>Class 1A Count</label>
+            <input type="number" id="U1aCount"><br><br>
+            <label>Class 1A Price</label>
+            <input type="number" id="U1aPrice"><br><br>
+            <label>Class G Count</label>
+            <input type="number" id="UgCount"><br><br>
+            <label>Class G Price</label>
+            <input type="number" id="UgPrice"><br><br>
+            <button class="opt" id="Update">Update</button>
+        </p>
+
+    </div>
+   <div class="row">
+       <p class="four" id="cncltrform">
+           <button id="close2">X</button>
+           <label>Train Number</label><br>
+           <input type="number" id="trainNo"><br><br>
+           <label>Date</label><br>
+           <input type="date" id="cnclDate"><br><br>
+           <button class="opt" id="cancel">Cancel</button>
+
+       </p>
+   </div>
+</div>
+
+</div>
+
+ <script type="text/javascript" src="admin.js"></script>
+
+</body>
+</html>

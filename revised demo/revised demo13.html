@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo13</title>
+    <style>
+        .btn
+        {
+        float:left;
+        display:border;
+        width:10%;
+        height:5%;
+        border:1px solid black;
+        background:lawngreen;
+        text-align:center;
+        }
+    </style>
+</head>
+<body>
+<h1>hidden links</h1>
+    <p id="link"><a href="https://www.google.com/">Redirect link</a></p>
+<div class="btn">
+    <p id="psiog">Psiog digital</p>
+</div>
+    <br><br><br>
+<div class="btn">
+    <p id="lms">LMS</p>
+</div>
+
+    <script>
+    var but = document.getElementById("psiog");
+    but.addEventListener("mouseover",function(){
+    func("https://psiog.com/")},false);
+
+     var ls = document.getElementById("lms");
+    ls.addEventListener("mouseover",function(){func("http://impact.psiog.com/")},false);
+
+    function func(link)
+    {
+    var changelink=document.querySelector("#link a");
+    changelink.href=link;
+    //document.getElementById("link").innerHTML="link changed";
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo4</title>
+</head>
+<body style="background:lightseagreen">
+<div style="text-align:center">
+  <h1 style="color:yellow">Welcome to Psiog</h1>
+
+<label  >Name</label>
+<input type="text" id="Nam">
+<button onclick="change()">Welcome</button>
+<p id="name" style="font-size:20px"></p>
+</div>
+
+
+<!-the code greets every employee
+creating the link to psiog webpage by entering your name->
+
+<script>
+var k = "Greetings";//
+document.getElementById("name").innerHTML=k;
+//document.getElementById("name").innerHTML=k;
+
+    function change()
+    {
+     k = document.getElementById("Nam").value;
+        if(k)
+        {
+            n = "Welcome" ;
+            (function()
+            {
+                 document.getElementById("name").innerHTML=n+" "+k;
+                 var f= document.createElement("a");
+                 f.innerHTML="Click here to know more about Psiog";
+                 document.body.appendChild(f);
+                 f.setAttribute("href","https://psiog.com/");
+                 f.style.textAlign="center";
+             })();
+        }
+        else
+        {
+        alert("the name field is mandatory");
+        }
+
+
+
+    }
+
+</script>
+</body>
+</html>

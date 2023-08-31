@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div {
+  width: 350px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid black;
+}
+img
+{
+width:100px;
+height:100px;
+}
+</style>
+
+</head>
+<body style="background:lightseagreen">
+<div id="div" ondrop="drp(event)" ondragover="alloww(event)" style="background:yellow"></div>
+<br>
+<img id="immg" src="psiog.jpeg" draggable="true" ondragstart="drag(event)">
+
+<script>
+
+function alloww(event)
+{
+  event.preventDefault();
+}
+
+function drag(event)
+{
+  event.dataTransfer.setData("text", event.target.id);
+}
+
+function drp(event)
+{
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
+}
+
+</script>
+
+</body>
+</html>

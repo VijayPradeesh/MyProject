@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo14-1</title>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #blk
+         {
+		 margin:auto;
+		 padding:0px;
+         display:border;
+         background:white;
+		 cursor:crosshair;
+         }
+
+    </style>
+</head>
+<body style="background:green">
+<canvas id="blk" ></canvas>
+<br><br>
+<button id="act">Circle</button>
+<button id="deact">Rectangle</button>
+<button id="Line">Line</button>
+<button onclick="draw">Draw</button>
+<button onclick="undo()" title="undo"><i class="fa fa-undo" aria-hidden="true"></i></button>
+<p id="sh"></p>
+<p id="an"></p>
+
+
+<script>
+	var coordX;
+	var coordY;
+	var lineX;
+	var lineY;
+	var h = document.getElementById("blk");
+		var ctx =h.getContext("2d");
+		h.width = window.innerWidth/2;
+		h.height = window.innerHeight/2;
+	var bound = h.getBoundingClientRect();
+	var restore_array = [];
+	var index = -1;
+    window.onload=(function()
+    {
+        var g = document.getElementById("act");
+        var c = document.getElementById("deact");
+		var lineCanva = document.getElementById("Line");
+		lineCanva.addEventListener("click",line,false);
+        g.addEventListener("click",dem,false);
+        c.addEventListener("click",del,false);
+    })();
+	
+	
+	
+    function dem()
+    {
+		h.removeEventListener('mouseup',originRectY,false);
+		h.removeEventListener('mousedown', originRectX,false);
+        h.addEventListener('mousedown', originX,false);
+        //h.addEventListener("click",cl,false);
+    }
+    function del()
+    {
+		h.addEventListener('mousedown', originRectX,false);
+    }
+	function line() 
+	{
+		h.addEventListener('mousedown',originLineX,false);
+	}
+	function originLineX() 
+	{
+		lineX = event.pageX-bound.left;
+		lineY = event.pageY-bound.top;
+		h.addEventListener('mouseup',originLineY,false);
+	}
+	function originLineY()
+	{	
+		coordX = event.pageX-bound.left;
+		coordY = event.pageY-bound.top;
+		drawLinear();
+	}
+	function drawLinear()
+	{
+		ctx.beginPath();
+		ctx.moveTo(lineX,lineY);
+		ctx.lineTo(coordX,coordY);
+		ctx.stroke();
+		coordX = null;
+		coordY = null;
+		h.removeEventListener('mousedown',originLineX,false);
+		h.removeEventListener('mouseup', originLineY,false);
+		restore_array.push(ctx.getImageData(0,0,h.width,h.height));
+		index +=1;
+		console.log(restore_array);
+	}
+	function originRectX()
+	{
+		coordX = event.pageX-bound.left;
+		h.addEventListener('mouseup', originRectY,false);
+	}
+	function originRectY()
+	{
+		coordY = event.pageY-bound.top;
+		drawRect();
+	}
+	function drawRect()
+	{
+		ctx.beginPath();
+		ctx.rect(coordX, coordY, 150, 100);
+		ctx.stroke();
+		coordX = null;
+		coordY = null;
+		h.removeEventListener('mousedown',originRectX,false);
+		h.removeEventListener('mouseup', originRectY,false);
+		restore_array.push(ctx.getImageData(0,0,h.width,h.height));
+		index +=1;
+		console.log(restore_array);
+	}
+    function showpos()
+    {
+    var x = event.pageX;
+    var y = event.pageY;
+
+    var coordinates="X : "+(x)+" Y :"+(y);
+    document.getElementById("sh").innerHTML=coordinates;
+	
+    //document.getElementById("an").innerText=g+" "+k;
+    // document.getElementById("blk").style.backgroundColor="red";
+    }
+	function drawLine()
+	{
+		console.log(coordX);
+		console.log(coordY);
+		ctx.beginPath();
+		ctx.arc(coordX, coordY, 50, 0, 2 * Math.PI);
+		ctx.stroke();
+		coordX = null;
+		coordY = null;
+		//h.removeEventListener("mousemove",showpos,false);
+		h.removeEventListener('mouseup',originY,false);
+		h.removeEventListener('mousedown', originX,false);
+		restore_array.push(ctx.getImageData(0,0,h.width,h.height));
+		index +=1;
+	}
+	function originX() 
+	{
+		coordX = event.pageX-bound.left;
+		h.addEventListener('mouseup',originY,false);
+	}
+	function originY() {
+	coordY = event.pageY-bound.top;
+	drawLine();
+	
+	}
+	function undo()
+	{
+	if(index<=0) 
+	{
+		return;
+	}else {
+	   index -=1;
+	   restore_array.pop();
+	   ctx.putImageData(restore_array[index],0,0);
+		}
+	}
+	
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo5-1</title>
+</head>
+<body style="background:seagreen">
+<h1>BMI calculator</h1><br><br>
+<label >Mass in kg</label><br><br>
+<input type="text" id="mass"><br><br>
+<label>Height(mts)</label><br><br>
+<input type="text" id="height"><br><br>
+<button onclick="calc()">Calculate</button>
+<p id="status"></p>
+
+<script>
+    function calc()
+    {
+        var inp={};
+        inp.m=document.getElementById("mass").value;
+        inp.h=document.getElementById("height").value;
+        console.log(inp.m+" "+inp.h);
+        if(!(isNaN(inp.m) && isNaN(inp.h)) &&((inp.m))&&(inp.h))
+        {
+            var h = inp.h*inp.h;
+            var j = inp.m/h;
+            var t=document.getElementById("status");
+            t.innerHTML="Your BMI is "+parseInt(j);
+            //document.body.appendChild(t);
+
+        }
+        else
+        {
+        alert("enter numerical value");
+        }
+
+
+
+
+    }
+
+</script>
+
+</body>
+</html>

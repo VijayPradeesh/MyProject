@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo7-2</title>
+</head>
+<body style="background:lightseagreen">
+<h1>Fill the below fields</h1>
+<label >Name</label><br>
+<input type="text" name="array[]"><br><br>
+<label >Age</label><br>
+<input type="text" name="array[]"><br><br>
+<label >Profession</label><br>
+<input type="text" name="array[]"><br><br>
+<label >Company</label><br>
+<input type="text" name="array[]"><br><br>
+<button onclick="submit()">Submit</button>
+<button onclick="print()">Print</button>
+<br><br>
+<div style="text-align:right; position:relative; left:60%; border:2px solid black; width:20%; height:80px ">
+    <p id="para" style="text-align:center">
+
+    </p>
+</div>
+
+<script>
+ var a= new Array();
+    function submit()
+    {
+        var g = document.getElementsByName('array[]');
+        for(var i=0;i<g.length;i++)
+        {
+
+         a[i]=g[i].value;
+        }
+        alert("response submitted successfully");
+    }
+
+      function print()
+      {
+        var g="";
+        for(var i =0; i<a.length;i++)
+        {
+             g+=a[i]+"\n";
+        }
+        document.getElementById("para").innerHTML=g;
+      }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignIn</title>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body >
+<div style="text-align:center" id="loginblock" class="block">
+    <div class="box" >
+        <label for="" >Email</label><br>
+        <input type="email" id="email" placeholder="email" />
+    </div>
+    <br>
+    <div class="box" >
+        <label for="">Password</label><br>
+        <input type="password" id="password" placeholder="password"/>
+    </div>
+    <br>
+
+     <div class="buttons">
+
+        <button onclick="signIn()" id="signin">Sign In</button>
+
+    </div>
+    <div class="buttons">
+             <h3 style="color:white">New User? Create Account</h3>
+        <button onclick="signUp()" id="signup">Sign Up</button>
+    </div>
+
+</div>
+
+<div style="text-align:center" id="homeblock" class="block">
+    <p>Welcome</p>
+    <button onclick="signOut()" id="signout">Signout</button>
+    <br><br><br>
+<div class="buttons">
+    <a href="Home.html" >
+        <button>Home page</button>
+    </a>
+</div>
+
+
+</div>
+</body>
+</html>

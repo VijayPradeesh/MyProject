@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo13-2</title>
+</head>
+<body style="background:lightseagreen;padding:20px;">
+<div style="border:2px solid black ;width:30vw">
+ <ul id="list">
+    <li>Dhoni</li>
+    <li>Virat</li>
+    <li>Bumrah</li>
+</ul>
+</div>
+<br><br>
+
+<input type="text" id="in">
+<button onclick="funcadd()">ADD</button>
+
+<script>
+
+    function funcadd()
+    {
+    var j = document.getElementById("in").value;
+    if(j)
+    {
+         var n = document.createElement("LI");
+        var text=document.createTextNode(j);
+        n.appendChild(text);
+        document.getElementById("list").appendChild(n);
+        document.getElementById("in").value="";
+    }
+    else
+    {
+        alert("Oops...");
+    }
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>revdemo-2</title>
+</head>
+<body>
+<h1 id="hh"></h1>
+<p id="pp"></p>
+<p id="jj"></p>
+<button onclick="creatE()">CREATE</button>
+<!-self invoking function is used to add the paragraph dynamically->
+<!-by clicking on the create button an another paragraph is added->
+</body>
+<script>
+    (function()
+    {
+        document.getElementById("hh").innerHTML="Welcome";
+        document.getElementById("pp").innerHTML="This is my paragraph created dynamically";
+    })();
+    function creatE()
+    {
+        document.getElementById("jj").innerHTML="This is the paragraph created by clicking the button";
+    }
+</script>
+</html>

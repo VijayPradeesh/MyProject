@@ -1,0 +1,118 @@
+<!doctypeHTML>
+<html>
+<head></head>
+<body>
+<div style="text-align:center">
+<canvas id="canvas" width="700px" height="500px" style="background:white;border:2px solid black;margin:auto;text-align:center;cursor:crosshair"></canvas>
+</div>
+
+</body>
+<script>
+var canvas;
+var ctx;
+var firstPointX;
+var firstPointY;
+var count = 0;
+var restore_array = [];
+var secondPointX ;
+var secondPointY;
+var imgData;
+var dragok;
+var WIDTH;
+var HEIGHT;
+initialize();
+function initialize() {
+	    canvas = document.getElementById("canvas");
+		ctx = canvas.getContext("2d");
+		canvas.addEventListener("mousedown", drawLine);
+}
+
+function drawLine() {
+	console.log("mouse down");
+	var bound = canvas.getBoundingClientRect();
+	firstPointX = event.clientX-bound.left;
+	firstPointY = event.clientY-bound.top;
+	canvas.removeEventListener("mousedowm", drawLine);
+	canvas.addEventListener("mousemove",drawRect);
+	imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+}
+
+function drawRect() {
+	console.log("mouse move");
+	
+	ctx.clearRect(0,0,canvas.width, canvas.height);
+	
+	ctx.putImageData(imgData, 0, 0);
+	var bound = canvas.getBoundingClientRect();
+	secondPointX = event.clientX-bound.left;
+	secondPointY = event.clientY-bound.top;
+	var width = event.clientX-bound.left - firstPointX;
+	var height = event.clientY-bound.top - firstPointY;
+	WIDTH = width;
+	HEIGHT= height
+	ctx.strokeRect(firstPointX,firstPointY,width,height);
+	canvas.addEventListener("mouseup",endRect);
+	
+}
+function endRect() {
+	canvas.removeEventListener("mousemove",drawRect);
+	var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+	ctx.putImageData(imgData, 0, 0);
+	 canvas.removeEventListener("mousedown", drawLine);
+	 canvas.addEventListener("mousedown", dragRect);
+	 canvas.addEventListener("mouseup", endDrag);
+	imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+}
+function endDrag() {
+	
+	  canvas.addEventListener("mousedown", drawLine);
+	dragok = false;
+	canvas.style.cursor = "crosshair";
+	clearInterval(setInterval(draw, 10));
+	
+}
+function dragRect() {
+    var bound = canvas.getBoundingClientRect();
+	if(event.clientX-bound.left>= firstPointX && event.clientX - bound.left <= secondPointX &&
+	event.clientY -bound.top <= secondPointY && event.clientY -bound.top >= firstPointY) {
+		canvas.removeEventListener("mousedown", drawLine);
+		canvas.style.cursor = "move"
+		//firstPointX = event.clientX -bound.left;
+		//firstPointY= event.clientY -bound.top;
+		dragok = true;
+		canvas.onmousemove = myMove;
+		setInterval(draw, 10);
+	}else
+	{
+		console.log("ppppp");
+		canvas.addEventListener("mousedown", drawLine);
+		console.log("lklkl");
+	}
+}
+function myMove(e){
+var bound = canvas.getBoundingClientRect();
+ if (dragok){
+  firstPointX = event.clientX - canvas.offsetLeft;
+  firstPointY = event.clientY-canvas.offsetTop;
+ }
+ 
+}
+
+function draw() {
+ctx.clearRect(0,0,canvas.width, canvas.height);
+	
+	ctx.putImageData(imgData, 0, 0);
+	//var bound = canvas.getBoundingClientRect();
+	secondPointX = firstPointX+WIDTH;
+	secondPointY =firstPointY + HEIGHT ;
+	//var width = event.clientX-bound.left - firstPointX;
+	//var height = event.clientY-bound.top - firstPointY;
+	//WIDTH = width;
+	//HEIGHT= height
+	ctx.strokeRect(firstPointX,firstPointY,WIDTH,HEIGHT);
+	
+}
+
+
+</script>
+</html>

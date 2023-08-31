@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo6</title>
+</head>
+<body style="background:lightseagreen">
+<label style="font-weight:600">Name</label>
+<br>
+<input type="text" id="name">
+<br>
+<br>
+<label style="font-weight:600">company</label>
+<br>
+<input type="text" id="company">
+<br>
+<br>
+<label style="font-weight:600">Address</label>
+<br>
+<input type="text" id="address">
+<br>
+<br>
+<button style="font-weight:600" onclick="get()">Get</button>
+
+<p id="welcome"></p>
+<script>
+    function get()
+    {
+        var nam=document.getElementById("name").value;
+        var comp=document.getElementById("company").value;
+        var add=document.getElementById("address").value;
+
+             function constt()
+            {
+                this.name=nam;
+                this.company=comp;
+                this.address=add;
+                this.status= function(){
+                k =nam+" is working in "+comp+" located at "+add;
+                alert(k);
+            }
+            }
+                var obj = new constt();//constructor function function call is made:;
+                var s="";
+                var arr=Object.keys(obj);// returns array of properties and methods associated with the object
+                for(var i=0;i<arr.length;i++)
+                {
+                    s+=arr[i] +"\n";
+                }
+                console.log("Properties associated with the object is \n"+s+"  ");
+                obj.status();
+                document.getElementById("welcome").innerHTML="Welcome "+obj.name;
+    }
+
+
+</script>
+</body>
+</html>

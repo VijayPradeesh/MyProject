@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo8</title>
+</head>
+<body>
+<label >First Name</label><br><br>
+<input type="text" id="fname"><br><br>
+<label >Last Name</label><br><br>
+<input type="text" id="lname"><br><br>
+<button onclick="display()">Submit</button>
+<p id="greet"></p>
+
+<script>
+function display(){
+    var person=
+    {
+    fiName:document.getElementById("fname").value,
+    laName:document.getElementById("lname").value
+    }
+
+    var greetings=
+    {
+        greet:function(l)
+        {
+        return this.fiName+" "+this.laName+" "+l;
+        }
+    }
+
+//the property name should be the same
+    var details=
+    {
+        fullname:function()
+        {
+        return this.fiName+" "+this.laName ;
+        }
+    }
+    //passing the owner object as arguments
+    var k = details.fullname.apply(person);
+    var m = greetings.greet.call(person,"greetings");
+    alert(m);
+    document.getElementById("greet").innerHTML="Hello "+k;
+}
+
+</script>
+
+
+</body>
+</html>

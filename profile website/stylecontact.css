@@ -1,0 +1,141 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+body{
+margin:0;
+padding:0;
+line-height:1.5;
+width:100%;
+height:100%;
+font-size:1.5vw;
+font-family:sans-serif;
+font-weight:500;}
+.left{
+width:20%;
+background:url("coding10.jpg") no-repeat;
+background-size:cover;
+position:fixed;
+height:100%;
+left:0;
+top:0;
+z-index:10;
+}
+*{
+margin:0;
+padding:0;
+outline:none;
+text-decoration:none;
+box-sizing:box-border;
+font-color:black;
+}
+::before,::after{
+box-sizing:box-border;
+}
+section{
+
+background:url("contact3.jpg") no-repeat;
+background-size:cover;
+/*background-color:aqua;*/
+min-height:100vh;
+
+}
+.maincontent{
+padding-left:20%;
+height:100%;
+}
+.left .name {
+font-size:3vw;
+text-align:center;
+color:black;
+padding:20px 0px;
+}
+
+.left .name a{
+color:black;
+}
+
+.left .list{
+padding:20px 0px;
+margin:80px 0px;
+list-style:none;
+text-align:center;
+}
+.left .list li a{
+font-size:2vw;
+color:black;
+text-decoration:none;
+line-height:70px;
+}
+.left .list li a:not(.active):hover{
+color:green;
+}
+.left .list li a.active{
+color:red;
+}
+
+.contact{
+font-size:2vw;
+display:block;
+list-style:none;
+color:white;
+text-align:center;
+padding:3vw;
+}
+
+.intro
+{
+width:18%;
+font-size:1.5vw;
+padding:20px;
+font-family:sans-serif;
+text-align:left;
+color:white;
+display:block;
+border:none;
+border-bottom:2px solid white;
+padding-right:30px;
+}
+
+.contact-form{
+padding:2vw;
+text-align:center;
+
+}
+.contact-form label{
+font-size:1.3vw;
+text-align:center;
+color:white;
+padding:30px;
+}
+.contact-form input
+{
+font-size:1.5vw;
+}
+.contact-form textarea
+{
+font-size:1.5vw;
+}
+button
+{
+width:6vw;
+height:3vw;
+font-size:1vw;
+
+}
+.cont
+{
+color:white;
+}
+.form{
+position:relative;
+left:-8%;
+}
+.thoughts
+{
+padding:2vw;
+}
+.icons
+{
+/*padding-left:70px;*/
+display:block;
+text-align:center;
+}
+

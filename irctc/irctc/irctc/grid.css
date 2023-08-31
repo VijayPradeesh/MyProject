@@ -1,0 +1,79 @@
+.row
+{
+    width:100%;
+    clear:both;
+    padding:0px;
+    margin:0px;
+}
+.one
+{
+    width:7.2%;
+    float:left;
+    margin-left:1%;
+}
+.two
+{
+    width:15.5%;
+    float:left;
+    margin-left:1%;
+}
+.three
+{
+    width:23.7%;
+    float:left;
+    margin-left:1%;
+}
+.four
+{
+    width:32%;
+    float:left;
+    margin-left:1%;
+}
+.five
+{
+    width:40.5%;
+    float:left;
+    margin-left:1%;
+}
+.six
+{
+    width:48.5%;
+    float:left;
+    margin-left:1%;
+}
+.seven
+{
+    width:56.5%;
+    float:left;
+    margin-left:1%;
+}
+.eight
+{
+    width:65%;
+    float:left;
+    margin-left:1%;
+}
+.nine
+{
+    width:73%;
+    float:left;
+    margin-left:1%;
+}
+.ten
+{
+     width:81.5%;
+    float:left;
+    margin-left:1%;
+}
+.eleven
+{
+     width:89.8%;
+    float:left;
+    margin-left:1%;
+}
+.container
+{
+    width:100%;
+    margin-right:auto;
+    margin-left:auto;
+}

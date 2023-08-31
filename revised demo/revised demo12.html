@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo12</title>
+</head>
+<body style="background:lightseagreen">
+<h1>Search for the given text</h1>
+<label >Please type</label><br><br>
+<textarea name="" id="inp" cols="70" rows="10"></textarea><br><br>
+<label > Search</label>
+<input type="text" id="srch"><br><br>
+<label > Replace</label>
+<input type="text" id="rplce"><br><br>
+<button onclick="srch()">Replace</button>
+<br><br>
+
+<script>
+    function srch()
+    {
+         var j = document.getElementById("inp").value;
+         var k = document.getElementById("srch").value;
+         var l = document.getElementById("rplce").value;
+         var patt = new RegExp(k,"gi");
+         if(patt.test(j))
+         {
+            // alert("match found");
+             var j2=j.replace(patt,l);
+             document.getElementById("inp").value=j2;
+         }
+         else
+         {
+             alert("No match found");
+         }
+    }
+</script>
+</body>
+</html>

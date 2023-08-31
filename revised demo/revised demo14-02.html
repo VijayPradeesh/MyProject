@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo14-02</title>
+    <style>
+        #dd
+        {
+            display:block;
+            border-radius:50%;
+            border:2px solid black;
+            width:10%;
+            height:20vh;
+            background:red;
+            position:relative;
+        }
+    </style>
+</head>
+<body style="background:lightseagreen">
+<div id="dd">
+
+</div>
+<script>
+(function()
+{
+    document.onkeydown=detect;
+    function detect()
+    {
+        var bb = document.getElementById("dd");
+        var x =bb.offsetLeft;
+        var y = bb.offsetTop;
+        var g = event.which|| event.keyCode;//cross platform
+
+        if(g=="38")
+        {
+
+            //document.getElementById("dd").style.left=(5+x)+"px";
+            document.getElementById("dd").style.top=(y-20)+"px";
+        }
+        else if(g=="40")
+        {
+
+            //document.getElementById("dd").style.left=(5+x)+"px";
+            document.getElementById("dd").style.top=(10+y)+"px";
+        }
+         else if(g=="39")
+        {
+
+            document.getElementById("dd").style.left=(5+x)+"px";
+            //document.getElementById("dd").style.top=(10+y)+"px";
+        }
+         else if(g=="37")
+        {
+
+            document.getElementById("dd").style.left=(x-20)+"px";
+            //document.getElementById("dd").style.top=(10+y)+"px";
+        }
+    }
+
+})();
+
+</script>
+</body>
+</html>

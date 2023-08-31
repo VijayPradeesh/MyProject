@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rich text editor</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    #editor
+    {
+         width:90vw;
+         height:70vh;
+         margin:auto;
+         align:center;
+    }
+    button
+    {
+        border:none;
+        padding:.7vw;
+
+    }
+    div
+    {
+        margin:auto;
+    }
+    #container
+    {
+        margin:auto;
+        text-align:center;
+    }
+    h2
+    {
+
+    }
+    body
+    {
+        font-family:Gadugi;
+        background:lavender;
+    }
+    iframe
+    {
+        background:white;
+    }
+
+
+    </style>
+</head>
+<body>
+<div >
+    <h2 style="padding-left:20px; padding-top:20px;display:block;width:11vw; border-bottom:2px solid black">Text Editor</h2>
+</div>
+
+<div>
+    <div id="container">
+    <button onclick="execute('bold')" title="bold"><i class="fa fa-bold" aria-hidden="true"></i></button>
+<button onclick="execute('italic')" title="italic"><i class="fa fa-italic" aria-hidden="true"></i></button>
+<button onclick="execute('underline')" title="underline"><i class="fa fa-underline" aria-hidden="true"></i></button>
+<button onclick="execute('strikethrough')" title="strike-through"><i class="fa fa-strikethrough" aria-hidden="true"></i></button>
+<button onclick="execute('justifyLeft')" title="align-left"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+<button onclick="execute('justifyRight')" title="align-right"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+<button onclick="execute(justifyCenter)" title="align-center"><i class="fa fa-align-center" aria-hidden="true" ></i></button>
+<button onclick="execute('justifyFull')" title="align-justify"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+<button onclick="execute('índent')" title="indent-right"><i class="fa fa-indent" aria-hidden="true"></i></button>
+<button onclick="execute('outdent')" title="indent-left"><i class="fa fa-outdent" aria-hidden="true"></i></button>
+<button onclick="execute('insertOrderedList')" title="ordered list"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
+<button onclick="execute('insertUnorderedList')" title="unordered list"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
+<button onclick="execute('undo')" title="undo"><i class="fa fa-undo" aria-hidden="true"></i></button>
+<button onclick="execute('redo')" title="redo"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+<button onclick="execute('copy')" title="copy"><i class="fa fa-files-o" aria-hidden="true"></i></button>
+<button onclick="execute('cut')" title="cut"><i class="fa fa-scissors" aria-hidden="true"></i></button>
+<button onclick="execute('subscript')" title="subscript"><i class="fa fa-subscript" aria-hidden="true"></i></button>
+<button onclick="execute('superscript')" title="superscript"><i class="fa fa-superscript" aria-hidden="true"></i></button>
+<button onclick="execute('insertParagraph')" title="paragraph"><i class="fa fa-paragraph" aria-hidden="true"></i></button>
+<button onclick="execute('insertHorizontalRule')" title="horizontal-rule">H-Rule</button>
+<button onclick="executeprop('createLink',prompt('Énter the url','http://'))" title="link"><i class="fa fa-link" aria-hidden="true"></i></button>
+<button onclick="execute('unlink')" title="unlink"><i class="fa fa-chain-broken" aria-hidden="true"></i></button>
+
+
+<button onclick="executeprop('insertImage',prompt('Enter the image url'))" title="insert-image"><i class="fa fa-file-image-o" aria-hidden="true"></i></button>
+<button onclick="changeToggleEdit()" title="toggle edit"><i class="fa fa-toggle-on" aria-hidden="true"></i></button>
+<button onclick="execute('selectAll')" title="select all" ><i class="fa fa-globe" aria-hidden="true"></i></button>
+
+        <br><br><br>
+<label>Font Color</label>
+<input type="color" onchange="executeprop('foreColor',this.value)" title="font color">
+<label>Background</label>
+<input type="color" onchange="executeprop('hiliteColor',this.value)" title="background color">
+<select name="" id="fonts" onchange="executeprop('fontName',this.value)" title="font">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Calibri">Calibri</option>
+    <option value="Cambria">Cambria</option>
+    <option value="Candara">Candara</option>
+    <option value="Comic Sans MS">Comic Sans MS</option>
+    <option value="Consolas">Consolas</option>
+    <option value="Constantia">Constantia</option>
+    <option value="Corbel">Corbel</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Ebrima">Ebrima</option>
+    <option value="Gabriola">Gabriola</option>
+</select>
+<select name="" id="fontSize" onchange="executeprop('fontSize',this.value)" title="font size">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4" selected>4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+</select>
+<select name="" id="heading" onchange="executeprop('formatBlock',this.value)" title="Heading">
+    <option value="H1">H1</option>
+    <option value="H2">H2</option>
+    <option value="H3">H3</option>
+    <option value="H4">H4</option>
+    <option value="H5">H5</option>
+    <option value="H6">H6</option>
+
+</select>
+
+
+
+</div>
+</div>
+
+<br><br>
+
+<div id="output"  contentEditable="true" style="width:90vw; height:50vw; background:white ; box-shadow:0px 0px 5px 0px black"></div>
+</body>
+
+<script>
+var isInEditMode=true;
+
+/*(function()
+{
+ document.designMode="On";
+})();
+*/
+function execute(prop)
+{
+   document.execCommand(prop,true,null);
+}
+
+function executeprop(prop,val)
+{
+    document.execCommand(prop,false,val);
+}
+
+
+function changeToggleEdit()
+{
+    if(isInEditMode)
+    {
+        //document.designMode="Off";
+        document.getElementById("output").contentEditable=false
+        isInEditMode=false;
+    }
+    else
+    {
+       // richTextEditor.document.designMode="On";
+       document.getElementById("output").contentEditable=true;
+        isInEditMode=true;
+
+    }
+}
+
+function findAndReplace()
+{
+    document.getElementById("fnd").style.display="block";
+    document.getElementById("rplce").style.display="block";
+    document.getElementById("fndbtn").style.display="block";
+    document.getElementById("rplcebtn").style.display="block";
+   /* var h = document.getElementById("editor");
+    var g = h.contentWindow.document.body.innerHTML;*/
+    var g = document.getElementById("output").value;
+    alert(g);
+}
+/*
+<p align="center" id="para"><iframe id="editor" src="" frameborder="2" name="richTextEditor" style="text-align:center" ></iframe> </p>
+*/
+</script>
+</html>

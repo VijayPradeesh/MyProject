@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo14-03</title>
+    <style>
+        #div1
+        {
+            width:30vw;
+            height:20vh;
+            background:lightseagreen;
+            padding:30px;
+            align:center;
+        }
+        #div2
+        {
+            width:25vw;
+            height:12.5vh;
+            background:yellow;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">Element1
+    <div id="div2">
+        Element2
+    </div>
+</div>
+<label>Cancel Propogation</label>
+<input type="checkbox" id="chk"><br><br>
+
+<script>
+window.onload=(function()
+                {
+                    var t = document.getElementById("div1");
+                    t.addEventListener("click",func1,false);
+                    var n = document.getElementById("div2");
+                    n.addEventListener("click",func2,true);
+
+                })();
+                function func1()
+                {
+                    alert("element1");
+                    var g = document.getElementById("chk");
+                    if(g.checked)
+                    {
+                        event.stopPropagation();
+                    }
+                }
+                function func2()
+                {
+                    alert("element2");
+                    var f = document.getElementById("chk");
+                    //alert(f.checked);
+                    if(f.checked)
+                    {
+                    event.cancelBubble=true;
+                    }
+                }
+
+
+</script>
+</body>
+</html>

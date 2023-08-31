@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>revdemo-2-02</title>
+</head>
+<body>
+<!-an immediately invoking function is used to create a heading and paragraph dynamically
+another method is called by a method call->
+<script>
+    (function()
+    {
+    var k = document.createElement("h1");
+    k.innerHTML="hello";
+    var h =document.createElement("P");
+    h.innerHTML="The paragraph is created dynamically by using js";
+    document.body.appendChild(k);
+    document.body.appendChild(h);
+     var g = function()
+        {
+        var l = document.createElement("p");
+        l.innerHTML="This function is invoked by calling";
+        document.body.appendChild(l);
+        }
+
+        g();
+    })();
+
+
+</script>
+</body>
+</html>

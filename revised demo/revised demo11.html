@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background:lightseagreen">
+<h1 style="text-align:center">Know your Age</h1>
+<label style="font-weight:600" >Date of Birth</label><br>
+format:yyyy/dd/mm <br><br>
+<input type="text" id="dat"><br><br>
+<button onclick="calc()">Calculate</button>
+<p id="bage"></p>
+<script>
+function calc()
+{
+var d = document.getElementById("dat").value;
+var da1=new Date(d);
+var d1 = new Date();
+var k = d1.getTime()-da1.getTime();//used getTime method to get period in milliseconds
+var g = k/(1000*3600*24);
+document.getElementById("bage").innerHTML="Your Age Is "+parseInt(g/365);
+//alert(parseInt(g/365));
+}
+//today's date
+</script>
+</body>
+</html>

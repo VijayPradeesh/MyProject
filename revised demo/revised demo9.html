@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo9</title>
+</head>
+<body style="background:lightseagreen">
+<div id="loginblock">
+<h1 style="text-align:center; color:yellow">Welcome to Psiog banking services </h1>
+<label style="font-weight:600" >USER NAME</label><br><br>
+<input type="text" id="username"><br><br>
+<label style="font-weight:600" >PASSWORD</label><br><br>
+<input type="password" id="pword"><br><br>
+<button onclick="eva()">Submit</button>
+</div>
+
+<div id="homeblock" style="display:none">
+<h2 style="text-align:center">Choose your preference</h2>
+    <label style="font-weight:600" >Enter the amount</label><br><br>
+    <input type="text" id="withdrawl">
+    <button onclick="withdraw()">withdraw</button>
+    <br><br>
+     <label style="font-weight:600" >Enter the amount</label><br><br>
+    <input type="text" id="deposit">
+    <button onclick="deposit()">deposit</button>
+    <br><br>
+
+    <button onclick="balance()">balance</button>
+    <br><br>
+
+</div>
+
+
+<script>
+function eva()
+{
+var arr = new Array();
+arr[0]="Vijay";
+arr[1]="hellovijay";
+var credentials=
+    {
+    Uname:document.getElementById("username").value,
+    Pword:document.getElementById("pword").value
+    }
+//alert(credentials.Pword);
+
+if(credentials.Uname===arr[0] && credentials.Pword===arr[1])
+{
+alert("Welcome"+" "+credentials.Uname);
+  document.getElementById("loginblock").style.display="none";
+    document.getElementById("homeblock").style.display="block";
+}
+else
+{
+alert("invalid username and password");
+}
+}
+//module
+var tran=(function()
+{
+    var balance = 5000;//cannot be accessed
+    var vis={}//object is created and wil be returned
+    vis.with=function()
+    {
+        var j = document.getElementById("withdrawl").value;
+    if(j>balance)
+    {
+        alert("not enough balance");
+    }
+    else if(isNaN(j))
+    {
+        alert("invalid");
+    }
+    else
+    {
+        alert("collect your cash");
+        balance=balance-j;
+        document.getElementById("withdrawl").value="";
+    }
+
+    }
+    vis.bal=function()
+    {
+        alert("Your current balance is "+balance);
+    }
+
+    vis.depo=function()
+    {
+        var k = document.getElementById("deposit").value;
+    if(isNaN(j))
+    {
+        alert("invalid");
+    }
+    else
+    {
+        balance=balance-(-k);
+        alert("you have deposited " + k);
+        document.getElementById("deposit").value="";
+    }
+
+    }
+    return vis;
+
+})();
+
+function withdraw()
+{
+    tran.with();
+}
+function balance()
+{
+    tran.bal();
+}
+function deposit()
+{
+    tran.depo();
+}
+</script>
+</body>
+</html>

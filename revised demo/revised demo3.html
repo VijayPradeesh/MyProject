@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<title>Generate Id</title>
+        <style>
+            #img
+            {
+            height:50px;
+            width:50px;
+            text-align:center;
+            padding:5px;
+            }
+        </style>
+	</head>
+	<body style="background:lightseagreen">
+    <h1 style="text-align:center; background:yellow " >Welcome to Employee-id generation Portal</h1>
+    <br>
+    <label for="name" id="name">Name</label>
+    <br>
+    <input type="text" id="nam">
+    <br>
+    <br>
+    <label for="id" id="id">Employee Id</label>
+    <br>
+    <br>
+    <input type="text" id="employeeId">
+    <br>
+    <br>
+
+    <button onclick="empId()">Generate</button>
+    <div class="block" style="text-align:center; background:yellow; display:block; border:1px solid black; min-height:20vh; width:30%; position:relative; left:40%; font-weight:600"  >
+        <img id="img" src="" alt="logo">
+       <p id="empName">Employee Name</p>
+        <p id="empId">Employee Id</p>
+        <p id="companyName">Company Name</p>
+        <p id="companyAddress">Company Address</p>
+    </div>
+		<script>
+			function empId()
+			{
+                  //module 1
+                  //Emp is not a constructor so object cannot be created
+                  var Emp = (function()
+                  {
+                       nm=document.getElementById("nam").value;//this value cannot be accessed
+                       emid=document.getElementById("employeeId").value; // this value cannot be accessed
+
+                       var empl={}
+                       empl.Name=nm; //this value can be accessed by . operator
+                       empl.EmpId=emid;
+
+                       return empl;
+                   })();
+
+
+
+                   //module 1 extended
+                   //the properties are added.
+                  var empdet = (function(sEmp)
+                   {
+                        sEmp.companyName="Psiog Digital";
+                        sEmp.companyAddress="Perungudi,Chennai";
+                   })(Emp);
+
+                 //condition to check whether the fields are null
+
+                 if(!nm || !emid)
+                 {
+                    alert("all fields are mandatory");
+                 }
+                 else
+                 {
+                    var g = document.getElementById("img");
+                    g.src="psiog.jpeg";
+                    document.getElementById("empName").innerHTML=Emp.Name;
+                    document.getElementById("empId").innerHTML=Emp.EmpId;
+                    document.getElementById("companyName").innerHTML=Emp.companyName;
+                    document.getElementById("companyAddress").innerHTML=Emp.companyAddress;
+                 }
+			}
+		</script>
+	</body>
+</html>

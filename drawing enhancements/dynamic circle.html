@@ -1,0 +1,81 @@
+<!doctypeHTML>
+<html>
+<head></head>
+<body>
+<div style="text-align:center">
+<canvas id="canvas" width="700px" height="500px" style="background:white;border:2px solid black;margin:auto;text-align:center;cursor:crosshair"></canvas>
+</div>
+
+</body>
+<script>
+var canvas;
+var ctx;
+var firstPointX;
+var firstPointY;
+var count = 0;
+var restore_array = [];
+var secondPointX ;
+var secondPointY;
+var imgData;
+initialize();
+function initialize() {
+	    canvas = document.getElementById("canvas");
+		ctx = canvas.getContext("2d");
+		canvas.addEventListener("mousedown", drawLine);
+}
+
+function drawLine() {
+	console.log("mouse down");
+	var bound = canvas.getBoundingClientRect();
+	firstPointX = event.clientX-bound.left;
+	firstPointY = event.clientY-bound.top;
+	canvas.removeEventListener("mousedowm", drawLine);
+	canvas.addEventListener("mousemove",drawRect);
+	imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+}
+
+function drawRect() {
+var bound = canvas.getBoundingClientRect();
+	var contCircletwoX = event.clientX-bound.left;
+	var contCircletwoY = event.clientY-bound.top;
+	var x = (firstPointX +contCircletwoX)/2;
+		var y = (firstPointY+contCircletwoY)/2;
+		var rad;
+		var a = x-firstPointX;
+		if(a<0)
+		{
+			a=a*(-1);
+		}
+		var b = y -firstPointY;
+		if(b<0) 
+		{
+			b=b*(-1);
+		}
+		if(a>b)
+		{
+			rad = a;
+		}else {
+			rad = b;
+		}
+		rad = (a+b)/2;
+	console.log("mouse move");
+	
+	ctx.clearRect(0,0,canvas.width, canvas.height);
+	
+	ctx.putImageData(imgData, 0, 0);
+	
+	ctx.beginPath();
+		
+		ctx.arc(firstPointX, firstPointY, rad, 0, 2 * Math.PI);
+		ctx.stroke();
+	canvas.addEventListener("mouseup",endRect);
+	
+}
+function endRect() {
+	canvas.removeEventListener("mousemove",drawRect);
+	var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+	ctx.putImageData(imgData, 0, 0);
+}
+
+</script>
+</html>
