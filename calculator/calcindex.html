@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calc.css">
+
+</head>
+<body>
+<h1>Calculator</h1>
+<div class="main">
+    <form name="disp">
+        <input class="tex" name="inp">
+    </form>
+
+    <br>
+    <table cellpadding="3vw">
+        <tr>
+            <td><input id="clr" class="btn" type="button" value="C" ></td>
+            <td><input id="bsp" class="btn"  type="button" value="B" ></td>
+            <td><input class="btn"  type="button" value="*" onclick="ins('*')"></td>
+            <td><input class="btn"  type="button" value="/" onclick="ins('/')"></td>
+        </tr>
+
+        <tr>
+            <td><input class="btn"  type="button" value="7" onclick="ins(7)"></td>
+            <td><input class="btn"  type="button" value="8" onclick="ins(8)"></td>
+            <td><input class="btn"  type="button" value="9" onclick="ins(9)"></td>
+            <td><input class="btn"  type="button" value="+" onclick="ins('+')"></td>
+        </tr>
+
+        <tr>
+            <td><input class="btn"  type="button" value="4" onclick="ins(4)"></td>
+            <td><input class="btn"  type="button" value="5" onclick="ins(5)"></td>
+            <td><input class="btn"  type="button" value="6" onclick="ins(6)"></td>
+            <td><input class="btn"  type="button" value="-" onclick="ins('-')"></td>
+        </tr>
+        <tr>
+            <td><input class="btn"  type="button" value="1" onclick="ins(1)"></td>
+            <td><input class="btn"  type="button" value="2" onclick="ins(2)"></td>
+            <td><input class="btn"  type="button" value="3" onclick="ins(3)"></td>
+            <td><input id="solve" class="btn"  type="button" value="=" ></td>
+        </tr>
+         <tr >
+            <td colspan="2"><input class="btn"  type="button" value="0" onclick="ins(0)"></td>
+            <td><input class="btn"  type="button" value="." onclick="ins('.')"></td>
+
+        </tr>
+
+    </table>
+</div>
+    <script src="calc.js"></script>
+</body>
+</html>
