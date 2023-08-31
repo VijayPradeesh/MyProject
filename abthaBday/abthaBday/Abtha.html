@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        body
+        {
+
+            background:url("love.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+        #image
+        {
+            text-align:center;
+            width:50%%;
+            height:50vh;
+        }
+        #myCanvas
+        {
+            font-family:cursive;
+        }
+    </style>
+</head>
+<body>
+<table style="margin:auto">
+    <tr>
+        <br><br>
+        <td><canvas id="myCanvas" ></canvas></td>
+    <td>
+        <div id="main" style="text-align:center">
+            <br><br><br>
+    <img id="image" src="birthday.png" alt="bday image">
+    <div>
+        <p style="font-family:cursive">
+            You are the one who has shown me what true love actually is!!
+            <br><br>
+            Thank You for being with me...
+            <br><br>
+            Want you to be Abthashree Vijay
+        </p>
+    </div>
+</div>
+        </td>
+    <td>
+        <br><br>
+            <canvas id="myCanvas1"></canvas>
+    </td>
+
+
+    </tr>
+
+</table>
+
+</body>
+<script>
+     var canvas = document.getElementById("myCanvas");
+
+        /* Get the height and width of the window */
+        canvas.height = 400;
+        canvas.width = 300;
+
+        /* Get the 2D context of the canvas  */
+        var ctx = canvas.getContext("2d");
+        let game = setInterval(repeat,4000);
+        //---------------
+         var canvas1 = document.getElementById("myCanvas1");
+
+        /* Get the height and width of the window */
+        canvas1.height = 400;
+        canvas1.width = 300;
+
+        /* Get the 2D context of the canvas  */
+        var ctx1 = canvas1.getContext("2d");
+        let game1 = setInterval(repeat1,4000);
+
+        function repeat(){
+        /* Fills or sets the color,gradient,pattern */
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.font = "29px Arial";
+         ctx.fillStyle = 'yellow';
+             ctx.fillText("Happy Birthday", 50, 320)
+        ctx.fillStyle = "red";
+
+        /* Writes the required text  */
+
+
+        let particles = [];
+
+
+        /* Initialize particle object  */
+        class Particle {
+            constructor(x, y, radius, dx, dy) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.dx = dx;
+                this.dy = dy;
+                this.alpha = 1;
+            }
+            draw() {
+
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = 'red';
+
+                /* Begins or reset the path for
+                   the arc created */
+                ctx.beginPath();
+
+                /* Some curve is created*/
+                ctx.arc(this.x, this.y, this.radius,
+                        0, Math.PI * 2, false);
+
+                ctx.fill();
+
+                /* Restore the recent canvas context*/
+                ctx.restore();
+            }
+            update() {
+                this.draw();
+                this.alpha -= 0.01;
+                this.x += this.dx;
+                this.y += this.dy;
+            }
+        }
+
+        /* Timer is set for particle push
+            execution in intervals*/
+        setTimeout(() => {
+            for (i = 0; i <= 150; i++) {
+                let dx = (Math.random() - 0.5) * (Math.random() * 6);
+                let dy = (Math.random() - 0.5) * (Math.random() * 6);
+                let radius = Math.random() * 3;
+                let particle = new Particle(200, 320, radius, dx, dy);
+
+                /* Adds new items like particle*/
+                particles.push(particle);
+            }
+            explode();
+        }, 3000);
+
+        /* Particle explosion function */
+        function explode() {
+
+            /* Clears the given pixels in the rectangle */
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((particle, i) => {
+                    if (particle.alpha <= 0) {
+                        particles.splice(i, 1);
+                    } else particle.update()
+                })
+
+                /* Performs a animation after request*/
+            requestAnimationFrame(explode);
+            ctx.fillStyle = 'yellow';
+            ctx.fillText("Happy Birthday", 50, 320)
+        }
+        }
+
+        //------------------------------------
+
+
+        function repeat1(){
+        /* Fills or sets the color,gradient,pattern */
+        ctx1.fillStyle = "white";
+        ctx1.fillRect(0, 0, canvas1.width, canvas1.height);
+        ctx1.font = "29px Arial";
+        ctx1.fillStyle = "yellow";
+        ctx1.fillText("Abthashree Vijay", 50, 320);
+
+        /* Writes the required text  */
+
+
+        let particles = [];
+
+
+        /* Initialize particle object  */
+        class Particle {
+            constructor(x, y, radius, dx, dy) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.dx = dx;
+                this.dy = dy;
+                this.alpha = 1;
+            }
+            draw() {
+
+                ctx1.save();
+                ctx1.globalAlpha = this.alpha;
+                ctx1.fillStyle = 'red';
+
+                /* Begins or reset the path for
+                   the arc created */
+                ctx1.beginPath();
+
+                /* Some curve is created*/
+                ctx1.arc(this.x, this.y, this.radius,
+                        0, Math.PI * 2, false);
+
+                ctx1.fill();
+
+                /* Restore the recent canvas context*/
+                ctx1.restore();
+            }
+            update() {
+                this.draw();
+                this.alpha -= 0.01;
+                this.x += this.dx;
+                this.y += this.dy;
+            }
+        }
+
+        /* Timer is set for particle push
+            execution in intervals*/
+        setTimeout(() => {
+            for (i = 0; i <= 150; i++) {
+                let dx = (Math.random() - 0.5) * (Math.random() * 6);
+                let dy = (Math.random() - 0.5) * (Math.random() * 6);
+                let radius = Math.random() * 3;
+                let particle = new Particle(200, 320, radius, dx, dy);
+
+                /* Adds new items like particle*/
+                particles.push(particle);
+            }
+            explode();
+        }, 3000);
+
+        /* Particle explosion function */
+        function explode() {
+
+            /* Clears the given pixels in the rectangle */
+            ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+            ctx1.fillStyle = "white";
+            ctx1.fillRect(0, 0, canvas1.width, canvas1.height);
+            particles.forEach((particle, i) => {
+                    if (particle.alpha <= 0) {
+                        particles.splice(i, 1);
+                    } else particle.update()
+                })
+
+                /* Performs a animation after request*/
+            requestAnimationFrame(explode);
+            ctx1.fillStyle = 'yellow';
+             ctx1.fillText("Abthashree Vijay", 50, 320);
+                     }
+        }
+
+       // alert("hello");
+</script>
+</html>
